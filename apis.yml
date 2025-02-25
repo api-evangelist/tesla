@@ -24,6 +24,7 @@ type: Contract
 image: https://www.tesla.com/favicon.ico
 access: 3rd-Party
 modified: '2025-02-25'
+created: '2025-02-25'
 position: Consuming
 description: >-
   Tesla, Inc. is an American electric vehicle and clean energy company founded
