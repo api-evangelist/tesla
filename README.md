@@ -23,8 +23,19 @@ Tesla, Inc. is an American electric vehicle and clean energy company founded by 
 ### Fleet API
 Provides access to Tesla vehicles and energy devices for data and command functionality.
 
+**Human URL:** [https://developer.tesla.com](https://developer.tesla.com)
+
 
 
 #### Properties
 
 - [Documentation](https://developer.tesla.com/docs/fleet-api)
+- [ Billing](https://developer.tesla.com/docs/fleet-api/billing-and-limits)
+- [Authentication](https://developer.tesla.com/docs/fleet-api/authentication/overview)
+
+## Common Properties
+
+- [Portal](https://developer.tesla.com/)
+- [Announcements](https://developer.tesla.com/docs/fleet-api/announcements)
+- [FAQ](https://developer.tesla.com/docs/fleet-api/support/faq)
+- [Contact](https://developer.tesla.com/docs/fleet-api/support/contact)
