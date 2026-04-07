@@ -2729,3 +2729,8 @@ components:
           description: ""
         - name: move
           description: ""
+tags:
+  - name: Authentication
+  - name: Media Control
+  - name: Vehicle Commands
+  - name: Vehicles

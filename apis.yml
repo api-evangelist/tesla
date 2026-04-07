@@ -26,8 +26,8 @@ apis:
 name: Tesla
 tags:
   - Automobiles
-  - Vehicles
   - Cars
+  - Vehicles
 type: Contract
 image: https://www.tesla.com/favicon.ico
 access: 3rd-Party
