@@ -35,13 +35,10 @@ created: '2025-02-25'
 modified: '2026-03-16'
 position: Consuming
 description: >-
-  Tesla, Inc. is an American electric vehicle and clean energy company founded
-  by Elon Musk in 2003. Tesla is known for producing electric cars, solar energy
-  products, and energy storage solutions. The company's goal is to accelerate
-  the world's transition to sustainable energy by offering innovative and
-  environmentally-friendly products. Tesla's electric vehicles, such as the
-  Model S, Model 3, Model X, and Model Y, have become popular for their high
-  performance, long range, and advanced technology features.
+  Tesla, Inc. is an American electric vehicle and clean energy company founded by
+  Elon Musk in 2003. Tesla is known for producing electric cars, solar energy products,
+  and energy storage solutions. The company's goal is to accelerate the world's transition
+  to sustainable energy by offering innovative and environmentally-friendly products.
 common:
   - name: Tesla | Developer
     description: 'null'

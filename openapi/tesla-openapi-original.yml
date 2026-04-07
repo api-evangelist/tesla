@@ -10,7 +10,7 @@ paths:
     post:
       tags:
         - Authentication
-      summary: Get an Access Token
+      summary: Tesla Get an Access Token
       description: |-
         Performs the login. Takes in an plain text email and password, matching the owner's login information for [https://my.teslamotors.com/user/login](https://my.teslamotors.com/user/login).
         Returns a `access_token` which is passed along as a header with all future requests to authenticate the user.
@@ -35,9 +35,8 @@ paths:
     get:
       tags:
         - Vehicles
-      summary: List all Vehicles
-      description: Retrieve a list of your owned vehicles (includes vehicles not yet
-        shipped!)
+      summary: Tesla List all Vehicles
+      description: Retrieve a list of your owned vehicles (includes vehicles not yet shipped!)
       operationId: GetVehicles
       responses:
         200:
@@ -50,7 +49,7 @@ paths:
     get:
       tags:
         - Vehicles
-      summary: Retrieve a vehicle
+      summary: Tesla Retrieve a vehicle
       description: Retrieve a specific vehicle
       operationId: GetVehicle
       parameters:
@@ -82,7 +81,7 @@ paths:
     get:
       tags:
         - Vehicles
-      summary: Mobile Access
+      summary: Tesla Mobile Access
       description: Determines if mobile access to the vehicle is enabled.
       operationId: GetVehicleMobileEnabled
       parameters:
@@ -103,7 +102,7 @@ paths:
     get:
       tags:
         - Vehicles
-      summary: Charge State
+      summary: Tesla Charge State
       description: Returns the state of charge in the battery.
       operationId: GetVehicleChargeState
       parameters:
@@ -124,7 +123,7 @@ paths:
     get:
       tags:
         - Vehicles
-      summary: Climate Settings
+      summary: Tesla Climate Settings
       description: Returns the current temperature and climate control state.
       operationId: GetVehicleClimateState
       parameters:
@@ -145,7 +144,7 @@ paths:
     get:
       tags:
         - Vehicles
-      summary: Driving and Position
+      summary: Tesla Driving and Position
       description: Returns the driving and position state of the vehicle.
       operationId: GetVehicleDriveState
       parameters:
@@ -166,9 +165,8 @@ paths:
     get:
       tags:
         - Vehicles
-      summary: GUI Settings
-      description: Returns various information about the GUI settings of the car,
-        such as unit format and range display.
+      summary: Tesla GUI Settings
+      description: Returns various information about the GUI settings of the car, such as unit format and range display.
       operationId: GetVehilceGuiSettings
       parameters:
         - name: vehicle_id
@@ -188,7 +186,7 @@ paths:
     get:
       tags:
         - Vehicles
-      summary: Vehicle State
+      summary: Tesla Vehicle State
       description: Returns the vehicle's physical state, such as which doors are open.
       operationId: GetVehicleState
       parameters:
@@ -209,7 +207,7 @@ paths:
     get:
       tags:
         - Vehicles
-      summary: Vehicle Config
+      summary: Tesla Vehicle Config
       description: Returns the vehicle's configuration
       operationId: GetVehicleConfig
       parameters:
@@ -230,7 +228,7 @@ paths:
     get:
       tags:
         - Vehicles
-      summary: Vehicle Data
+      summary: Tesla Vehicle Data
       description: Returns all vehicle ∂ata, potentially cached
       operationId: GetVehicleData
       parameters:
@@ -255,9 +253,8 @@ paths:
     post:
       tags:
         - Vehicle Commands
-      summary: Wake Up Car
-      description: Wakes up the car from the sleep state. Necessary to get some data
-        from the car.
+      summary: Tesla Wake Up Car
+      description: Wakes up the car from the sleep state. Necessary to get some data from the car.
       operationId: WakeUpVehicle
       parameters:
         - name: vehicle_id
@@ -277,9 +274,8 @@ paths:
     post:
       tags:
         - Vehicle Commands
-      summary: Wake Up Car
-      description: Wakes up the car from the sleep state. Necessary to get some data
-        from the car.
+      summary: Tesla Wake Up Car
+      description: Wakes up the car from the sleep state. Necessary to get some data from the car.
       operationId: WakeUpVehicleCommand
       parameters:
         - name: vehicle_id
@@ -299,7 +295,7 @@ paths:
     post:
       tags:
         - Vehicle Commands
-      summary: Set Valet Mode
+      summary: Tesla Set Valet Mode
       description: |-
         Sets valet mode on or off with a PIN to disable it from within the car. Reuses last PIN from previous valet session.
         Valet Mode limits the car's top speed to 70MPH and 80kW of acceleration power. It also disables Homelink, Bluetooth and
@@ -331,7 +327,7 @@ paths:
     post:
       tags:
         - Vehicle Commands
-      summary: Reset Valet PIN
+      summary: Tesla Reset Valet PIN
       description: Resets the PIN set for valet mode, if set.
       operationId: ResetValetPin
       parameters:
@@ -352,7 +348,7 @@ paths:
     post:
       tags:
         - Vehicle Commands
-      summary: Open Charge Port
+      summary: Tesla Open Charge Port
       description: Opens and unlocks the charge port.
       operationId: OpenChargePort
       parameters:
@@ -373,7 +369,7 @@ paths:
     post:
       tags:
         - Vehicle Commands
-      summary: Close Charge Port
+      summary: Tesla Close Charge Port
       description: Closes the charge port.
       operationId: CloseChargePort
       parameters:
@@ -394,9 +390,8 @@ paths:
     post:
       tags:
         - Vehicle Commands
-      summary: Set Charge Limit to Standard
-      description: Set the charge mode to standard (90% under the new percentage system
-        introduced in 4.5).
+      summary: Tesla Set Charge Limit to Standard
+      description: Set the charge mode to standard (90% under the new percentage system introduced in 4.5).
       operationId: SendStandardChargeLimit
       parameters:
         - name: vehicle_id
@@ -416,9 +411,8 @@ paths:
     post:
       tags:
         - Vehicle Commands
-      summary: Set Charge Limit to Max Range
-      description: Set the charge mode to max range (100% under the new percentage
-        system introduced in 4.5). Use sparingly!
+      summary: Tesla Set Charge Limit to Max Range
+      description: Set the charge mode to max range (100% under the new percentage system introduced in 4.5). Use sparingly!
       operationId: SetMaxChargeLimit
       parameters:
         - name: vehicle_id
@@ -438,7 +432,7 @@ paths:
     post:
       tags:
         - Vehicle Commands
-      summary: Set Charge Limit
+      summary: Tesla Set Charge Limit
       description: Set the charge limit to a custom percentage.
       operationId: SetChargeLimit
       parameters:
@@ -466,7 +460,7 @@ paths:
     post:
       tags:
         - Vehicle Commands
-      summary: Set Charge Current
+      summary: Tesla Set Charge Current
       description: Set the maximum Charge Current in Amps
       operationId: SetChargingAmps
       parameters:
@@ -494,7 +488,7 @@ paths:
     post:
       tags:
         - Vehicle Commands
-      summary: Set Scheduled Departure
+      summary: Tesla Set Scheduled Departure
       description: Set Scheduled Departure settings
       operationId: SetScheduledDeparture
       parameters:
@@ -522,7 +516,7 @@ paths:
     post:
       tags:
         - Vehicle Commands
-      summary: Set Scheduled Charging
+      summary: Tesla Set Scheduled Charging
       description: Set Scheduled Charging settings
       operationId: SetScheduledCharging
       parameters:
@@ -550,9 +544,8 @@ paths:
     post:
       tags:
         - Vehicle Commands
-      summary: Start Charging
-      description: Start charging. Must be plugged in, have power available, and not
-        have reached your charge limit.
+      summary: Tesla Start Charging
+      description: Start charging. Must be plugged in, have power available, and not have reached your charge limit.
       operationId: StartCharge
       parameters:
         - name: vehicle_id
@@ -572,7 +565,7 @@ paths:
     post:
       tags:
         - Vehicle Commands
-      summary: Stop Charging
+      summary: Tesla Stop Charging
       description: Stop charging. Must already be charging.
       operationId: StopCharge
       parameters:
@@ -593,7 +586,7 @@ paths:
     get:
       tags:
         - Vehicles
-      summary: Get Nearby Chargers
+      summary: Tesla Get Nearby Chargers
       description: Get a list of nearby charging sites
       operationId: NearbyChargers
       parameters:
@@ -614,7 +607,7 @@ paths:
     post:
       tags:
         - Vehicle Commands
-      summary: Flash Lights
+      summary: Tesla Flash Lights
       description: Flash the lights once.
       operationId: FlashLights
       parameters:
@@ -635,7 +628,7 @@ paths:
     post:
       tags:
         - Vehicle Commands
-      summary: Honk Horn
+      summary: Tesla Honk Horn
       description: Honk the horn once.
       operationId: HonkHorn
       parameters:
@@ -656,7 +649,7 @@ paths:
     post:
       tags:
         - Vehicle Commands
-      summary: Unlock Doors
+      summary: Tesla Unlock Doors
       description: Unlock the car's doors.
       operationId: UnlockDoors
       parameters:
@@ -677,7 +670,7 @@ paths:
     post:
       tags:
         - Vehicle Commands
-      summary: Lock Doors
+      summary: Tesla Lock Doors
       description: Lock the car's doors.
       operationId: LockDoors
       parameters:
@@ -698,7 +691,7 @@ paths:
     post:
       tags:
         - Vehicle Commands
-      summary: Set Temperature
+      summary: Tesla Set Temperature
       description: Set the temperature target for the HVAC system.
       operationId: SetTemperatures
       parameters:
@@ -726,9 +719,8 @@ paths:
     post:
       tags:
         - Vehicle Commands
-      summary: Start HVAC System
-      description: Start the climate control system. Will cool or heat automatically,
-        depending on set temperature.
+      summary: Tesla Start HVAC System
+      description: Start the climate control system. Will cool or heat automatically, depending on set temperature.
       operationId: StartHVAC
       parameters:
         - name: vehicle_id
@@ -748,7 +740,7 @@ paths:
     post:
       tags:
         - Vehicle Commands
-      summary: Stop HVAC System
+      summary: Tesla Stop HVAC System
       description: Stop the climate control system.
       operationId: StopHVAC
       parameters:
@@ -769,7 +761,7 @@ paths:
     post:
       tags:
         - Vehicle Commands
-      summary: Toggle Bioweapon Defense Mode
+      summary: Tesla Toggle Bioweapon Defense Mode
       description: Enable or Disable Bioweapon Defense Mode on equipped vehicles.
       operationId: BioweaponDefense
       parameters:
@@ -797,7 +789,7 @@ paths:
     post:
       tags:
         - Vehicle Commands
-      summary: Set the Climate Keeper mode
+      summary: Tesla Set the Climate Keeper mode
       description: Set the Climate Keeper mode.
       operationId: ClimateKeeper
       parameters:
@@ -825,7 +817,7 @@ paths:
     post:
       tags:
         - Vehicle Commands
-      summary: Enable or Disable Cabin Overheat Protection
+      summary: Tesla Enable or Disable Cabin Overheat Protection
       description: Enable or Disable Cabin Overheat Protection
       operationId: CabinOverheatProtection
       parameters:
@@ -853,7 +845,7 @@ paths:
     post:
       tags:
         - Vehicle Commands
-      summary: Set Seat Heater Level
+      summary: Tesla Set Seat Heater Level
       description: Set the heating level of a seat heater
       operationId: RemoteSeatHeaterRequest
       parameters:
@@ -881,7 +873,7 @@ paths:
     post:
       tags:
         - Vehicle Commands
-      summary: Set Seat Cooler Level
+      summary: Tesla Set Seat Cooler Level
       description: Set the cooling level of a seat heater
       operationId: RemoteSeatCoolerRequest
       parameters:
@@ -909,7 +901,7 @@ paths:
     post:
       tags:
         - Vehicle Commands
-      summary: Toggle Automatic Seat Heater/Cooler
+      summary: Tesla Toggle Automatic Seat Heater/Cooler
       description: Enables or disables automatic control of a seat heater/coooler
       operationId: RemoteAutoSeatClimateRequest
       parameters:
@@ -937,7 +929,7 @@ paths:
     post:
       tags:
         - Vehicle Commands
-      summary: Toggle Steering Wheel Heater
+      summary: Tesla Toggle Steering Wheel Heater
       description: Toggle the steering wheel heater
       operationId: RemoteSteeringWheelHeaterRequest
       parameters:
@@ -965,7 +957,7 @@ paths:
     post:
       tags:
         - Vehicle Commands
-      summary: Move Pano Roof
+      summary: Tesla Move Pano Roof
       description: Controls the car's panoramic roof, if installed.
       operationId: OpenSunroof
       parameters:
@@ -993,9 +985,8 @@ paths:
     post:
       tags:
         - Vehicle Commands
-      summary: Remote Start
-      description: Start the car for keyless driving. Must start driving within 2
-        minutes of issuing this request.
+      summary: Tesla Remote Start
+      description: Start the car for keyless driving. Must start driving within 2 minutes of issuing this request.
       operationId: RemoteStart
       parameters:
         - name: vehicle_id
@@ -1022,7 +1013,7 @@ paths:
     post:
       tags:
         - Vehicle Commands
-      summary: Open Trunk/Frunk
+      summary: Tesla Open Trunk/Frunk
       description: Open the trunk or frunk. Currently inoperable.
       operationId: OpenTrunk
       parameters:
@@ -1054,7 +1045,7 @@ paths:
     post:
       tags:
         - Vehicle Commands
-      summary: Activate Speed Limit
+      summary: Tesla Activate Speed Limit
       description: Activates Speed Limit
       operationId: ActivateSpeedLimit
       parameters:
@@ -1082,7 +1073,7 @@ paths:
     post:
       tags:
         - Vehicle Commands
-      summary: Deactivate Speed Limit
+      summary: Tesla Deactivate Speed Limit
       description: Deactivates Speed Limit
       operationId: DeactivateSpeedLimit
       parameters:
@@ -1110,7 +1101,7 @@ paths:
     post:
       tags:
         - Vehicle Commands
-      summary: Set Speed Limit
+      summary: Tesla Set Speed Limit
       description: Sets Speed Limit
       operationId: SetSpeedLimit
       parameters:
@@ -1138,7 +1129,7 @@ paths:
     post:
       tags:
         - Vehicle Commands
-      summary: Clear Speed Limit Pin
+      summary: Tesla Clear Speed Limit Pin
       description: Clears Speed Limit Pin
       operationId: ClearSpeedLimitPin
       parameters:
@@ -1166,7 +1157,7 @@ paths:
     post:
       tags:
         - Vehicle Commands
-      summary: Send Navigation Request
+      summary: Tesla Send Navigation Request
       description: Sends Navigation Request to Vehicle
       operationId: NavigationRequest
       parameters:
@@ -1194,7 +1185,7 @@ paths:
     post:
       tags:
         - Vehicle Commands
-      summary: Share data to Vehicle
+      summary: Tesla Share data to Vehicle
       description: Sends Data to Vehicle (v10 only)
       operationId: SharetoVehicle
       parameters:
@@ -1222,7 +1213,7 @@ paths:
     post:
       tags:
         - Media Control
-      summary: Pause/Play Media
+      summary: Tesla Pause/Play Media
       description: Pause/Play Media
       operationId: MediaTogglePlayback
       parameters:
@@ -1243,7 +1234,7 @@ paths:
     post:
       tags:
         - Media Control
-      summary: Next Track
+      summary: Tesla Next Track
       description: Next Track
       operationId: MediaNextTrack
       parameters:
@@ -1264,7 +1255,7 @@ paths:
     post:
       tags:
         - Media Control
-      summary: Previous Track
+      summary: Tesla Previous Track
       description: Previous Track
       operationId: MediaPrevTrack
       parameters:
@@ -1285,7 +1276,7 @@ paths:
     post:
       tags:
         - Media Control
-      summary: Next Favorite
+      summary: Tesla Next Favorite
       description: Next Favorite
       operationId: MediaNextFavorite
       parameters:
@@ -1306,7 +1297,7 @@ paths:
     post:
       tags:
         - Media Control
-      summary: Previous Favorite
+      summary: Tesla Previous Favorite
       description: Previous Favorite
       operationId: MediaPrevFavorite
       parameters:
@@ -1327,7 +1318,7 @@ paths:
     post:
       tags:
         - Media Control
-      summary: Volume Up
+      summary: Tesla Volume Up
       description: Volume Up
       operationId: MediaVolumeUp
       parameters:
@@ -1348,7 +1339,7 @@ paths:
     post:
       tags:
         - Media Control
-      summary: Volume Down
+      summary: Tesla Volume Down
       description: Volume Down
       operationId: MediaVolumeDown
       parameters:
@@ -1369,7 +1360,7 @@ paths:
     post:
       tags:
         - Media Control
-      summary: Adjust Volume
+      summary: Tesla Adjust Volume
       description: Adjust Volume
       operationId: MediaAdjustVolume
       parameters:
@@ -1397,7 +1388,7 @@ paths:
     post:
       tags:
         - Vehicle Commands
-      summary: Start Software Update
+      summary: Tesla Start Software Update
       description: Start Software Update
       operationId: StartSoftwareUpdate
       parameters:
@@ -1418,7 +1409,7 @@ paths:
     post:
       tags:
         - Vehicle Commands
-      summary: Cancel Software Update
+      summary: Tesla Cancel Software Update
       description: Cancel Software Update
       operationId: CancelSoftwareUpdate
       parameters:
@@ -1439,7 +1430,7 @@ paths:
     post:
       tags:
         - Vehicle Commands
-      summary: Toggle Sentry Mode
+      summary: Tesla Toggle Sentry Mode
       description: Toggle Sentry Mode
       operationId: SetSentryMode
       parameters:
@@ -1467,7 +1458,7 @@ paths:
     post:
       tags:
         - Vehicle Commands
-      summary: Set Max Defrost
+      summary: Tesla Set Max Defrost
       description: Set Max Defrost
       operationId: SetMaxDefrost
       parameters:
@@ -1495,7 +1486,7 @@ paths:
     post:
       tags:
         - Vehicle Commands
-      summary: Window Control
+      summary: Tesla Window Control
       description: Window Control
       operationId: WindowControl
       parameters:
@@ -1523,7 +1514,7 @@ paths:
     post:
       tags:
         - Vehicle Commands
-      summary: Trigger Homelink
+      summary: Tesla Trigger Homelink
       description: Trigger Homelink
       operationId: TriggerHomelink
       parameters:
@@ -1551,7 +1542,7 @@ paths:
     post:
       tags:
         - Vehicle Commands
-      summary: Set Vehicle Name
+      summary: Tesla Set Vehicle Name
       description: Set Vehicle Name
       operationId: SetVehicleName
       parameters:
@@ -1579,7 +1570,7 @@ paths:
     post:
       tags:
         - Vehicle Commands
-      summary: Remote Boombox
+      summary: Tesla Remote Boombox
       description: Remote Boombox
       operationId: RemoteBoombox
       parameters:
@@ -1617,13 +1608,11 @@ components:
           example: "123"
         email:
           type: string
-          description: The email for my.teslamotors.com. Only used with "password"
-            grant type.
+          description: The email for my.teslamotors.com. Only used with "password" grant type.
           example: elon@teslamotors.com
         password:
           type: string
-          description: The password for my.teslamotors.com. Only used with "password"
-            grant type.
+          description: The password for my.teslamotors.com. Only used with "password" grant type.
           example: edisonsux
         refresh_token:
           type: string
@@ -1705,9 +1694,7 @@ components:
       properties:
         state:
           type: string
-          description: The desired state of the panoramic roof. The approximate percent
-            open values for each state are `open` = 100%, `close` = 0%, `comfort`
-            = 80%, and `vent` = ~15%
+          description: The desired state of the panoramic roof. The approximate percent open values for each state are `open` = 100%, `close` = 0%, `comfort` = 80%, and `vent` = ~15%
           enum:
             - open
             - close
@@ -1737,10 +1724,7 @@ components:
       properties:
         heater:
           type: integer
-          description: 'The desired seat to adjust the heater for.  SeatHeaterFrontLeft:
-            0, SeatHeaterFrontRight: 1, SeatHeaterRearLeft: 2, SeatHeaterRearLeftBack:
-            3, SeatHeaterRearCenter: 4, SeatHeaterRearRight: 5, SeatHeaterRearRightBack:
-            6, SeatHeater3rdRowLeft: 7, SeatHeater3rdRowRight: 8'
+          description: 'The desired seat to adjust the heater for.  SeatHeaterFrontLeft: 0, SeatHeaterFrontRight: 1, SeatHeaterRearLeft: 2, SeatHeaterRearLeftBack: 3, SeatHeaterRearCenter: 4, SeatHeaterRearRight: 5, SeatHeaterRearRightBack: 6, SeatHeater3rdRowLeft: 7, SeatHeater3rdRowRight: 8'
           format: int32
           enum:
             - 0
@@ -1769,10 +1753,7 @@ components:
       properties:
         seat_position:
           type: integer
-          description: 'The desired seat to adjust the cooler for.  SeatHeaterFrontLeft:
-            0, SeatHeaterFrontRight: 1, SeatHeaterRearLeft: 2, SeatHeaterRearLeftBack:
-            3, SeatHeaterRearCenter: 4, SeatHeaterRearRight: 5, SeatHeaterRearRightBack:
-            6, SeatHeater3rdRowLeft: 7, SeatHeater3rdRowRight: 8'
+          description: 'The desired seat to adjust the cooler for.  SeatHeaterFrontLeft: 0, SeatHeaterFrontRight: 1, SeatHeaterRearLeft: 2, SeatHeaterRearLeftBack: 3, SeatHeaterRearCenter: 4, SeatHeaterRearRight: 5, SeatHeaterRearRightBack: 6, SeatHeater3rdRowLeft: 7, SeatHeater3rdRowRight: 8'
           format: int32
           enum:
             - 0
@@ -1801,10 +1782,7 @@ components:
       properties:
         auto_seat_position:
           type: integer
-          description: 'The desired seat to toggle auto mode for.  SeatHeaterFrontLeft:
-            0, SeatHeaterFrontRight: 1, SeatHeaterRearLeft: 2, SeatHeaterRearLeftBack:
-            3, SeatHeaterRearCenter: 4, SeatHeaterRearRight: 5, SeatHeaterRearRightBack:
-            6, SeatHeater3rdRowLeft: 7, SeatHeater3rdRowRight: 8'
+          description: 'The desired seat to toggle auto mode for.  SeatHeaterFrontLeft: 0, SeatHeaterFrontRight: 1, SeatHeaterRearLeft: 2, SeatHeaterRearLeftBack: 3, SeatHeaterRearCenter: 4, SeatHeaterRearRight: 5, SeatHeaterRearRightBack: 6, SeatHeater3rdRowLeft: 7, SeatHeater3rdRowRight: 8'
           format: int32
           enum:
             - 0
@@ -1871,8 +1849,7 @@ components:
       properties:
         departure_time:
           type: integer
-          description: Integer representing the desired departure time. Value is number
-            of minutes from midnight in intervals of 15
+          description: Integer representing the desired departure time. Value is number of minutes from midnight in intervals of 15
           format: int32
         enable:
           type: boolean
@@ -1886,8 +1863,7 @@ components:
           type: boolean
         end_off_peak_time:
           type: integer
-          description: Integer representing the desired off peak end time. Value is
-            number of minutes from midnight in intervals of 15
+          description: Integer representing the desired off peak end time. Value is number of minutes from midnight in intervals of 15
           format: int32
       example:
         departure_time: 180
@@ -1903,8 +1879,7 @@ components:
       properties:
         time:
           type: integer
-          description: Integer representing the desired charging start time. Value
-            is number of minutes from midnight in intervals of 15
+          description: Integer representing the desired charging start time. Value is number of minutes from midnight in intervals of 15
           format: int32
         enable:
           type: boolean
@@ -2086,8 +2061,7 @@ components:
           type: boolean
         fan_only:
           type: boolean
-          description: Only supported by some vehicles. Must be false on unsupported
-            vehicles.
+          description: Only supported by some vehicles. Must be false on unsupported vehicles.
       example:
         "on": true
         fan_only: false
