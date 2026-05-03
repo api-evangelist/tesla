@@ -1,41 +1,55 @@
-# Tesla (tesla)
-Tesla, Inc. is an American electric vehicle and clean energy company founded by Elon Musk in 2003. Tesla is known for producing electric cars, solar energy products, and energy storage solutions. The company's goal is to accelerate the world's transition to sustainable energy by offering innovative and environmentally-friendly products. Tesla's electric vehicles, such as the Model S, Model 3, Model X, and Model Y, have become popular for their high performance, long range, and advanced technology features.
+# Tesla
 
-**URL:** [Visit APIs.json URL](https://developer.tesla.com/)
+Tesla, Inc. is an American electric vehicle and clean energy company. Tesla offers the Fleet API for partners to access Tesla vehicles and energy devices with owner-granted permissions, covering vehicle telemetry, remote commands, charging management, energy site management, and fleet management capabilities.
 
-## Scope
-
-- **Type:** Contract 
-- **Position:** Consuming 
-- **Access:** 3rd-Party 
-
-## Tags:
-
- - Automobiles, Vehicles, Cars
-
-## Timestamps
-
-- **Created:** 2025-02-25 
-- **Modified:** 2025-02-25 
+**Type:** Company  
+**Developer Portal:** https://developer.tesla.com  
+**Website:** https://www.tesla.com  
+**GitHub:** https://github.com/teslamotors  
 
 ## APIs
 
-### Fleet API
-Provides access to Tesla vehicles and energy devices for data and command functionality.
+### Tesla Fleet API
+The official Tesla partner API providing access to Tesla vehicles and energy devices with OAuth permissions. Supports vehicle telemetry, remote commands, charging, and energy site management.
 
-**Human URL:** [https://developer.tesla.com](https://developer.tesla.com)
+- **Base URL:** `https://fleet-api.prd.na.vn.cloud.tesla.com/api/1`
+- **Authentication:** OAuth2 Bearer token
+- **Documentation:** https://developer.tesla.com/docs/fleet-api
 
+### Tesla Owner API
+Community-documented access to Tesla vehicles via the owner-api.teslamotors.com endpoint.
 
+- **Base URL:** `https://owner-api.teslamotors.com/api/1`
+- **Authentication:** Bearer token
+- **Documentation:** https://tesla-api.timdorr.com/
+- **OpenAPI Spec:** [openapi/tesla-openapi-original.yml](openapi/tesla-openapi-original.yml)
 
-#### Properties
+## Artifacts
 
-- [Documentation](https://developer.tesla.com/docs/fleet-api)
-- [ Billing](https://developer.tesla.com/docs/fleet-api/billing-and-limits)
-- [Authentication](https://developer.tesla.com/docs/fleet-api/authentication/overview)
+| Type | Files |
+|------|-------|
+| OpenAPI Specs | [openapi/](openapi/) |
+| Spectral Rules | [rules/tesla-rules.yml](rules/tesla-rules.yml) |
+| Capabilities | [capabilities/](capabilities/) |
+| JSON Schema | [json-schema/](json-schema/) |
+| JSON Structure | [json-structure/](json-structure/) |
+| JSON-LD | [json-ld/tesla-context.jsonld](json-ld/tesla-context.jsonld) |
+| Examples | [examples/](examples/) |
+| Vocabulary | [vocabulary/tesla-vocabulary.yml](vocabulary/tesla-vocabulary.yml) |
 
-## Common Properties
+## Capabilities
 
-- [Portal](https://developer.tesla.com/)
-- [Announcements](https://developer.tesla.com/docs/fleet-api/announcements)
-- [FAQ](https://developer.tesla.com/docs/fleet-api/support/faq)
-- [Contact](https://developer.tesla.com/docs/fleet-api/support/contact)
+### Workflow Capabilities
+- **[vehicle-monitoring.yaml](capabilities/vehicle-monitoring.yaml)** — Tesla vehicle telemetry monitoring and remote control (15 tools)
+
+### Shared Per-API Definitions
+- **[shared/tesla.yaml](capabilities/shared/tesla.yaml)** — Tesla Owner API: vehicle listing, telemetry, and remote commands (14 tools)
+
+## Tags
+
+Automobiles, Cars, Vehicles, Electric Vehicles, Energy, Clean Energy, IoT, Tesla, Remote Commands, Telemetry
+
+## Maintainers
+
+**FN:** Kin Lane  
+**Email:** kin@apievangelist.com

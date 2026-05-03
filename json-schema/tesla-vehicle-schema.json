@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/tesla/main/json-schema/tesla-vehicle-schema.json",
+  "title": "Tesla Vehicle",
+  "description": "A Tesla vehicle in the owner's account with identification, connectivity state, and configuration details.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "description": "Internal Tesla numeric vehicle ID"
+    },
+    "vehicle_id": {
+      "type": "integer",
+      "description": "Tesla internal vehicle identifier"
+    },
+    "vin": {
+      "type": "string",
+      "description": "Vehicle Identification Number (17 characters)"
+    },
+    "display_name": {
+      "type": "string",
+      "description": "User-assigned name shown in the Tesla app"
+    },
+    "option_codes": {
+      "type": "string",
+      "description": "Comma-separated manufacturing option codes"
+    },
+    "state": {
+      "type": "string",
+      "enum": ["online", "asleep", "offline"],
+      "description": "Vehicle connectivity state"
+    },
+    "in_service": {
+      "type": "boolean",
+      "description": "Whether vehicle is in service mode"
+    },
+    "id_s": {
+      "type": "string",
+      "description": "String form of the vehicle ID"
+    },
+    "calendar_enabled": {
+      "type": "boolean",
+      "description": "Whether calendar integration is enabled"
+    },
+    "api_version": {
+      "type": "integer",
+      "description": "Supported vehicle API version"
+    }
+  },
+  "required": ["id", "vin", "state"]
+}

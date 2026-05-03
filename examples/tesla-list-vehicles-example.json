@@ -1,0 +1,43 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://owner-api.teslamotors.com/api/1/vehicles",
+    "headers": {
+      "Authorization": "Bearer <TESLA_ACCESS_TOKEN>"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "response": [
+        {
+          "id": 1234567890,
+          "vehicle_id": 987654321,
+          "vin": "5YJ3E1EA8PF000001",
+          "display_name": "My Model 3",
+          "option_codes": "AD15,MDL3,PBSB,RENA,BT37,ID3W,RF3G,S3PB,DRLH,DV2W,W39B,APF0,COUS,BC3B,CH07,PC30,FC3P,FG31,GLFR,HL31,HM31,IL31,LTPB,MR31,FM3B,RS3H,SA3P,STCP",
+          "color": null,
+          "access_type": "OWNER",
+          "tokens": ["abc123", "def456"],
+          "state": "online",
+          "in_service": false,
+          "id_s": "1234567890",
+          "calendar_enabled": true,
+          "api_version": 36,
+          "backseat_token": null,
+          "backseat_token_updated_at": null,
+          "charge_state": null,
+          "climate_state": null,
+          "drive_state": null,
+          "gui_settings": null,
+          "vehicle_config": null,
+          "vehicle_state": null
+        }
+      ],
+      "count": 1
+    }
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "title": "Tesla Vehicle State Structure",
+  "description": "JSON structure documentation for Tesla vehicle physical state",
+  "type": "object",
+  "fields": [
+    {
+      "name": "api_version",
+      "type": "integer",
+      "description": "API version supported by the vehicle firmware"
+    },
+    {
+      "name": "autopark_state_v3",
+      "type": "string",
+      "description": "Autopark feature state"
+    },
+    {
+      "name": "center_display_state",
+      "type": "integer",
+      "description": "State of the center touchscreen display (0=off, 2=on)"
+    },
+    {
+      "name": "df",
+      "type": "integer",
+      "description": "Driver front door open state (0=closed, 1=open)"
+    },
+    {
+      "name": "dr",
+      "type": "integer",
+      "description": "Driver rear door open state (0=closed, 1=open)"
+    },
+    {
+      "name": "fd_window",
+      "type": "integer",
+      "description": "Front driver window position (0=closed)"
+    },
+    {
+      "name": "fp_window",
+      "type": "integer",
+      "description": "Front passenger window position (0=closed)"
+    },
+    {
+      "name": "ft",
+      "type": "integer",
+      "description": "Front trunk (frunk) open state (0=closed, 255=open)"
+    },
+    {
+      "name": "homelink_device_count",
+      "type": "integer",
+      "description": "Number of Homelink devices paired"
+    },
+    {
+      "name": "homelink_nearby",
+      "type": "boolean",
+      "description": "Whether a paired Homelink device is in range"
+    },
+    {
+      "name": "is_user_present",
+      "type": "boolean",
+      "description": "Whether a user is detected in or near the vehicle"
+    },
+    {
+      "name": "locked",
+      "type": "boolean",
+      "description": "Whether the vehicle is locked"
+    },
+    {
+      "name": "media_state",
+      "type": "object",
+      "description": "Current media playback state"
+    },
+    {
+      "name": "notifications_supported",
+      "type": "boolean",
+      "description": "Whether push notifications are supported"
+    },
+    {
+      "name": "odometer",
+      "type": "number",
+      "description": "Vehicle odometer reading in miles"
+    },
+    {
+      "name": "parsed_calendar_supported",
+      "type": "boolean",
+      "description": "Whether calendar parsing is supported"
+    },
+    {
+      "name": "pf",
+      "type": "integer",
+      "description": "Passenger front door open state (0=closed, 1=open)"
+    },
+    {
+      "name": "pr",
+      "type": "integer",
+      "description": "Passenger rear door open state (0=closed, 1=open)"
+    },
+    {
+      "name": "rd_window",
+      "type": "integer",
+      "description": "Rear driver window position (0=closed)"
+    },
+    {
+      "name": "rp_window",
+      "type": "integer",
+      "description": "Rear passenger window position (0=closed)"
+    },
+    {
+      "name": "rt",
+      "type": "integer",
+      "description": "Rear trunk open state (0=closed, 255=open)"
+    },
+    {
+      "name": "sentry_mode",
+      "type": "boolean",
+      "description": "Whether Sentry Mode is active"
+    },
+    {
+      "name": "software_update",
+      "type": "object",
+      "description": "Pending software update details"
+    },
+    {
+      "name": "speed_limit_mode",
+      "type": "object",
+      "description": "Speed Limit Mode settings"
+    },
+    {
+      "name": "sun_roof_percent_open",
+      "type": "integer",
+      "nullable": true,
+      "description": "Sun roof open percentage (0=closed, 100=fully open)"
+    },
+    {
+      "name": "timestamp",
+      "type": "integer",
+      "description": "Unix timestamp (milliseconds) when state was captured"
+    },
+    {
+      "name": "valet_mode",
+      "type": "boolean",
+      "description": "Whether Valet Mode is active"
+    },
+    {
+      "name": "vehicle_name",
+      "type": "string",
+      "description": "Vehicle display name"
+    }
+  ]
+}

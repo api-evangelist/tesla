@@ -1,0 +1,331 @@
+naftiko: "1.0.0-alpha1"
+
+info:
+  label: "Tesla Vehicle Monitoring and Control"
+  description: >-
+    Workflow capability for Tesla vehicle monitoring and remote control via the
+    Tesla Owner API. Enables fleet managers, IoT integrations, and personal vehicle
+    owners to monitor battery, climate, location, and physical state, and execute
+    remote commands including wake-up, lock/unlock, climate control, charging
+    management, sentry mode, and charging site discovery.
+  tags:
+    - Tesla
+    - Electric Vehicles
+    - Automobiles
+    - IoT
+    - Smart Vehicles
+    - Remote Commands
+    - Fleet Management
+  created: "2026-05-03"
+  modified: "2026-05-03"
+
+binds:
+  - namespace: env
+    keys:
+      TESLA_ACCESS_TOKEN: TESLA_ACCESS_TOKEN
+
+capability:
+  consumes:
+    - import: tesla
+      location: ./shared/tesla.yaml
+
+  exposes:
+    - type: rest
+      port: 8080
+      namespace: tesla-vehicle-api
+      description: "Unified REST API for Tesla vehicle monitoring and control."
+      resources:
+        - path: /v1/vehicles
+          name: vehicles
+          description: "Vehicle fleet listing"
+          operations:
+            - method: GET
+              name: list-vehicles
+              description: "List all Tesla vehicles"
+              call: "tesla.list-vehicles"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/vehicles/{vehicle_id}/data
+          name: vehicle-data
+          description: "Full vehicle telemetry"
+          operations:
+            - method: GET
+              name: get-vehicle-data
+              description: "Get all vehicle data"
+              call: "tesla.get-vehicle-data"
+              with:
+                vehicle_id: "rest.vehicle_id"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/vehicles/{vehicle_id}/charge-state
+          name: charge-state
+          description: "Battery and charging status"
+          operations:
+            - method: GET
+              name: get-charge-state
+              description: "Get charge state"
+              call: "tesla.get-charge-state"
+              with:
+                vehicle_id: "rest.vehicle_id"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/vehicles/{vehicle_id}/climate-state
+          name: climate-state
+          description: "Climate and temperature"
+          operations:
+            - method: GET
+              name: get-climate-state
+              description: "Get climate state"
+              call: "tesla.get-climate-state"
+              with:
+                vehicle_id: "rest.vehicle_id"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/vehicles/{vehicle_id}/drive-state
+          name: drive-state
+          description: "Location and driving state"
+          operations:
+            - method: GET
+              name: get-drive-state
+              description: "Get drive state and location"
+              call: "tesla.get-drive-state"
+              with:
+                vehicle_id: "rest.vehicle_id"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/vehicles/{vehicle_id}/nearby-charging
+          name: nearby-charging
+          description: "Nearby charging sites"
+          operations:
+            - method: GET
+              name: get-nearby-charging-sites
+              description: "Find nearby charging sites"
+              call: "tesla.get-nearby-charging-sites"
+              with:
+                vehicle_id: "rest.vehicle_id"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/vehicles/{vehicle_id}/commands/wake-up
+          name: wake-up
+          description: "Wake vehicle from sleep"
+          operations:
+            - method: POST
+              name: wake-up-vehicle
+              description: "Wake vehicle"
+              call: "tesla.wake-up-vehicle"
+              with:
+                vehicle_id: "rest.vehicle_id"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/vehicles/{vehicle_id}/commands/lock
+          name: lock
+          description: "Lock doors"
+          operations:
+            - method: POST
+              name: lock-doors
+              description: "Lock all doors"
+              call: "tesla.lock-doors"
+              with:
+                vehicle_id: "rest.vehicle_id"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/vehicles/{vehicle_id}/commands/unlock
+          name: unlock
+          description: "Unlock doors"
+          operations:
+            - method: POST
+              name: unlock-doors
+              description: "Unlock all doors"
+              call: "tesla.unlock-doors"
+              with:
+                vehicle_id: "rest.vehicle_id"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+    - type: mcp
+      port: 9090
+      namespace: tesla-vehicle-mcp
+      transport: http
+      description: "MCP server for AI-assisted Tesla vehicle monitoring and control."
+      tools:
+        - name: list-vehicles
+          description: "List all Tesla vehicles in the owner account"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "tesla.list-vehicles"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-vehicle-data
+          description: "Get complete telemetry snapshot for a Tesla vehicle"
+          hints:
+            readOnly: true
+            openWorld: false
+          call: "tesla.get-vehicle-data"
+          with:
+            vehicle_id: "tools.vehicle_id"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-charge-state
+          description: "Get battery percentage, charging status, and range estimate"
+          hints:
+            readOnly: true
+            openWorld: false
+          call: "tesla.get-charge-state"
+          with:
+            vehicle_id: "tools.vehicle_id"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-climate-state
+          description: "Get interior temperature and climate control settings"
+          hints:
+            readOnly: true
+            openWorld: false
+          call: "tesla.get-climate-state"
+          with:
+            vehicle_id: "tools.vehicle_id"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-drive-state
+          description: "Get vehicle GPS location, heading, and speed"
+          hints:
+            readOnly: true
+            openWorld: false
+          call: "tesla.get-drive-state"
+          with:
+            vehicle_id: "tools.vehicle_id"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-vehicle-state
+          description: "Get physical state of the vehicle (doors, windows, trunk, odometer)"
+          hints:
+            readOnly: true
+            openWorld: false
+          call: "tesla.get-vehicle-state"
+          with:
+            vehicle_id: "tools.vehicle_id"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-nearby-charging-sites
+          description: "Find nearby Superchargers and destination chargers with availability"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "tesla.get-nearby-charging-sites"
+          with:
+            vehicle_id: "tools.vehicle_id"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: wake-up-vehicle
+          description: "Wake a sleeping Tesla to enable remote commands"
+          hints:
+            readOnly: false
+            destructive: false
+            idempotent: true
+          call: "tesla.wake-up-vehicle"
+          with:
+            vehicle_id: "tools.vehicle_id"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: lock-doors
+          description: "Lock all doors on a Tesla vehicle"
+          hints:
+            readOnly: false
+            destructive: false
+            idempotent: true
+          call: "tesla.lock-doors"
+          with:
+            vehicle_id: "tools.vehicle_id"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: unlock-doors
+          description: "Unlock all doors on a Tesla vehicle"
+          hints:
+            readOnly: false
+            destructive: false
+            idempotent: true
+          call: "tesla.unlock-doors"
+          with:
+            vehicle_id: "tools.vehicle_id"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: start-climate
+          description: "Start climate pre-conditioning (heating/cooling) on a Tesla"
+          hints:
+            readOnly: false
+            destructive: false
+            idempotent: true
+          call: "tesla.start-climate"
+          with:
+            vehicle_id: "tools.vehicle_id"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: stop-climate
+          description: "Stop climate control on a Tesla"
+          hints:
+            readOnly: false
+            destructive: false
+            idempotent: true
+          call: "tesla.stop-climate"
+          with:
+            vehicle_id: "tools.vehicle_id"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: start-charging
+          description: "Start charging a Tesla vehicle"
+          hints:
+            readOnly: false
+            destructive: false
+            idempotent: true
+          call: "tesla.start-charging"
+          with:
+            vehicle_id: "tools.vehicle_id"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: stop-charging
+          description: "Stop charging a Tesla vehicle"
+          hints:
+            readOnly: false
+            destructive: false
+            idempotent: true
+          call: "tesla.stop-charging"
+          with:
+            vehicle_id: "tools.vehicle_id"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: set-sentry-mode
+          description: "Enable or disable Tesla Sentry Mode for security monitoring"
+          hints:
+            readOnly: false
+            destructive: false
+            idempotent: true
+          call: "tesla.set-sentry-mode"
+          with:
+            vehicle_id: "tools.vehicle_id"
+            on: "tools.on"
+          outputParameters:
+            - type: object
+              mapping: "$."

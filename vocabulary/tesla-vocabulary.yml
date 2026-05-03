@@ -1,0 +1,99 @@
+title: Tesla Vocabulary
+description: >-
+  Vocabulary and taxonomy for Tesla electric vehicle and energy API concepts,
+  covering the Fleet API, Owner API, vehicle telemetry, charging systems,
+  energy management, and remote command capabilities.
+created: '2026-05-03'
+modified: '2026-05-03'
+
+domains:
+  - name: Vehicle Identity
+    description: Vehicle identification and ownership
+    terms:
+      - name: VIN
+        definition: Vehicle Identification Number — 17-character unique identifier for each Tesla
+      - name: Fleet API
+        definition: Tesla's official partner API for third-party access to vehicles with owner permissions
+      - name: Owner API
+        definition: Community-documented API at owner-api.teslamotors.com for personal vehicle access
+      - name: Display Name
+        definition: User-assigned vehicle nickname shown in the Tesla app
+      - name: Option Codes
+        definition: Manufacturing option codes describing vehicle configuration
+
+  - name: Connectivity
+    description: Vehicle online/offline connectivity
+    terms:
+      - name: Online
+        definition: Vehicle is awake and connected to the Tesla network
+      - name: Asleep
+        definition: Vehicle is in low-power sleep mode to conserve battery
+      - name: Offline
+        definition: Vehicle is not reachable (out of cellular range)
+      - name: Wake Up
+        definition: Command transitioning a vehicle from sleep to online state
+
+  - name: Charging
+    description: Battery and charging concepts
+    terms:
+      - name: State of Charge
+        definition: Current battery level as a percentage
+      - name: Charge Limit
+        definition: The maximum SOC to which the vehicle will charge
+      - name: Supercharger
+        definition: Tesla's DC fast-charging network
+      - name: Charge Rate
+        definition: Current charging speed in miles of range per hour
+      - name: Charging State
+        definition: >-
+          Current status: Charging, Complete, Disconnected, Stopped, or NoPower
+      - name: Scheduled Charging
+        definition: Delay charging to off-peak electricity rate hours
+      - name: Preconditioning
+        definition: Warming or cooling battery and cabin using grid power before departure
+
+  - name: Climate Control
+    description: HVAC and thermal management
+    terms:
+      - name: Auto Conditioning
+        definition: Tesla's automated climate control for cabin temperature management
+      - name: Bioweapon Defense Mode
+        definition: HEPA-grade air filtration mode (Model X, S, Y)
+      - name: Climate Keeper
+        definition: Setting that maintains comfortable cabin temperature while parked
+      - name: Cabin Overheat Protection
+        definition: Auto-cooling when parked in hot weather
+
+  - name: Remote Commands
+    description: API-executable vehicle commands
+    terms:
+      - name: Door Lock
+        definition: Remote command to lock all doors
+      - name: Door Unlock
+        definition: Remote command to unlock all doors
+      - name: Flash Lights
+        definition: Brief headlight flash to locate vehicle
+      - name: Honk Horn
+        definition: Brief horn activation
+      - name: Sentry Mode
+        definition: Camera-based security monitoring when parked
+      - name: Valet Mode
+        definition: Speed-restricted mode for third-party drivers
+      - name: Speed Limit Mode
+        definition: PIN-protected maximum speed restriction
+
+  - name: Energy Management
+    description: Tesla energy products and Powerwall/solar APIs
+    terms:
+      - name: Energy Site
+        definition: A Tesla energy installation (Powerwall, solar, or Megapack)
+      - name: Backup Reserve
+        definition: The minimum battery percentage reserved for power outage backup
+      - name: Self-Powered Mode
+        definition: Energy site mode that maximizes use of solar energy
+      - name: Time-Based Control
+        definition: Energy site mode that optimizes charging/discharging based on electricity rate schedules
+      - name: Grid Import
+        definition: Charging the Powerwall from grid electricity
+      - name: Grid Export
+        definition: Selling excess solar or Powerwall energy back to the grid

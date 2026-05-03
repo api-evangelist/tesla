@@ -1,0 +1,516 @@
+naftiko: "1.0.0-alpha1"
+
+info:
+  label: "Tesla Owner API"
+  description: >-
+    The Tesla Owner API provides programmatic access to Tesla vehicles for monitoring
+    state data and executing remote commands. Covers vehicle listing, telemetry
+    (charge, climate, drive, vehicle state, config), remote commands (wake-up,
+    lock/unlock, climate control, charging, sentry mode), and media controls.
+  tags:
+    - Tesla
+    - Electric Vehicles
+    - Automobiles
+    - IoT
+    - Smart Vehicles
+  created: "2026-05-03"
+  modified: "2026-05-03"
+
+binds:
+  - namespace: env
+    keys:
+      TESLA_ACCESS_TOKEN: TESLA_ACCESS_TOKEN
+
+capability:
+  consumes:
+    - type: http
+      namespace: tesla
+      baseUri: https://owner-api.teslamotors.com
+      description: "Tesla Owner API for vehicle telemetry and remote commands"
+      authentication:
+        type: bearer
+        token: "{{TESLA_ACCESS_TOKEN}}"
+      resources:
+        - name: vehicles
+          path: /api/1/vehicles
+          description: "List all vehicles in owner account"
+          operations:
+            - name: list-vehicles
+              method: GET
+              description: "List all owned Tesla vehicles"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+        - name: vehicle
+          path: /api/1/vehicles/{vehicle_id}
+          description: "Get specific vehicle details"
+          operations:
+            - name: get-vehicle
+              method: GET
+              description: "Retrieve a specific vehicle"
+              inputParameters:
+                - name: vehicle_id
+                  in: path
+                  type: string
+                  required: true
+                  description: "Vehicle ID"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+        - name: vehicle-data
+          path: /api/1/vehicles/{vehicle_id}/vehicle_data
+          description: "Get all vehicle data"
+          operations:
+            - name: get-vehicle-data
+              method: GET
+              description: "Get all vehicle data including charge, climate, drive, and state"
+              inputParameters:
+                - name: vehicle_id
+                  in: path
+                  type: string
+                  required: true
+                  description: "Vehicle ID"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+        - name: charge-state
+          path: /api/1/vehicles/{vehicle_id}/data_request/charge_state
+          description: "Get battery and charge state"
+          operations:
+            - name: get-charge-state
+              method: GET
+              description: "Get battery level and charging status"
+              inputParameters:
+                - name: vehicle_id
+                  in: path
+                  type: string
+                  required: true
+                  description: "Vehicle ID"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+        - name: climate-state
+          path: /api/1/vehicles/{vehicle_id}/data_request/climate_state
+          description: "Get climate and temperature state"
+          operations:
+            - name: get-climate-state
+              method: GET
+              description: "Get temperature and climate settings"
+              inputParameters:
+                - name: vehicle_id
+                  in: path
+                  type: string
+                  required: true
+                  description: "Vehicle ID"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+        - name: drive-state
+          path: /api/1/vehicles/{vehicle_id}/data_request/drive_state
+          description: "Get drive and position state"
+          operations:
+            - name: get-drive-state
+              method: GET
+              description: "Get location, speed, and drive state"
+              inputParameters:
+                - name: vehicle_id
+                  in: path
+                  type: string
+                  required: true
+                  description: "Vehicle ID"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+        - name: vehicle-state
+          path: /api/1/vehicles/{vehicle_id}/data_request/vehicle_state
+          description: "Get physical vehicle state"
+          operations:
+            - name: get-vehicle-state
+              method: GET
+              description: "Get physical state (doors, windows, trunk)"
+              inputParameters:
+                - name: vehicle_id
+                  in: path
+                  type: string
+                  required: true
+                  description: "Vehicle ID"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+        - name: wake-up
+          path: /api/1/vehicles/{vehicle_id}/wake_up
+          description: "Wake up vehicle"
+          operations:
+            - name: wake-up-vehicle
+              method: POST
+              description: "Wake the vehicle from sleep"
+              inputParameters:
+                - name: vehicle_id
+                  in: path
+                  type: string
+                  required: true
+                  description: "Vehicle ID"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+        - name: door-unlock
+          path: /api/1/vehicles/{vehicle_id}/command/door_unlock
+          description: "Unlock vehicle doors"
+          operations:
+            - name: unlock-doors
+              method: POST
+              description: "Unlock all vehicle doors"
+              inputParameters:
+                - name: vehicle_id
+                  in: path
+                  type: string
+                  required: true
+                  description: "Vehicle ID"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+        - name: door-lock
+          path: /api/1/vehicles/{vehicle_id}/command/door_lock
+          description: "Lock vehicle doors"
+          operations:
+            - name: lock-doors
+              method: POST
+              description: "Lock all vehicle doors"
+              inputParameters:
+                - name: vehicle_id
+                  in: path
+                  type: string
+                  required: true
+                  description: "Vehicle ID"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+        - name: climate-start
+          path: /api/1/vehicles/{vehicle_id}/command/auto_conditioning_start
+          description: "Start climate control"
+          operations:
+            - name: start-climate
+              method: POST
+              description: "Start auto conditioning"
+              inputParameters:
+                - name: vehicle_id
+                  in: path
+                  type: string
+                  required: true
+                  description: "Vehicle ID"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+        - name: climate-stop
+          path: /api/1/vehicles/{vehicle_id}/command/auto_conditioning_stop
+          description: "Stop climate control"
+          operations:
+            - name: stop-climate
+              method: POST
+              description: "Stop auto conditioning"
+              inputParameters:
+                - name: vehicle_id
+                  in: path
+                  type: string
+                  required: true
+                  description: "Vehicle ID"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+        - name: charge-start
+          path: /api/1/vehicles/{vehicle_id}/command/charge_start
+          description: "Start charging"
+          operations:
+            - name: start-charging
+              method: POST
+              description: "Start vehicle charging"
+              inputParameters:
+                - name: vehicle_id
+                  in: path
+                  type: string
+                  required: true
+                  description: "Vehicle ID"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+        - name: charge-stop
+          path: /api/1/vehicles/{vehicle_id}/command/charge_stop
+          description: "Stop charging"
+          operations:
+            - name: stop-charging
+              method: POST
+              description: "Stop vehicle charging"
+              inputParameters:
+                - name: vehicle_id
+                  in: path
+                  type: string
+                  required: true
+                  description: "Vehicle ID"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+        - name: sentry-mode
+          path: /api/1/vehicles/{vehicle_id}/command/set_sentry_mode
+          description: "Control sentry mode"
+          operations:
+            - name: set-sentry-mode
+              method: POST
+              description: "Enable or disable Sentry Mode"
+              inputParameters:
+                - name: vehicle_id
+                  in: path
+                  type: string
+                  required: true
+                  description: "Vehicle ID"
+              body:
+                type: json
+                data:
+                  on: "{{tools.on}}"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+        - name: nearby-charging
+          path: /api/1/vehicles/{vehicle_id}/nearby_charging_sites
+          description: "Get nearby charging sites"
+          operations:
+            - name: get-nearby-charging-sites
+              method: GET
+              description: "Get nearby Superchargers and destination chargers"
+              inputParameters:
+                - name: vehicle_id
+                  in: path
+                  type: string
+                  required: true
+                  description: "Vehicle ID"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+  exposes:
+    - type: rest
+      port: 8100
+      namespace: tesla-rest
+      resources:
+        - path: /v1/vehicles
+          name: vehicles
+          description: "Vehicle listing"
+          operations:
+            - method: GET
+              name: list-vehicles
+              description: "List all Tesla vehicles"
+              call: "tesla.list-vehicles"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/vehicles/{vehicle_id}/data
+          name: vehicle-data
+          description: "Vehicle telemetry"
+          operations:
+            - method: GET
+              name: get-vehicle-data
+              description: "Get all vehicle data"
+              call: "tesla.get-vehicle-data"
+              with:
+                vehicle_id: "rest.vehicle_id"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+    - type: mcp
+      port: 9100
+      namespace: tesla-mcp
+      transport: http
+      tools:
+        - name: list-vehicles
+          description: "List all Tesla vehicles in the owner account"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "tesla.list-vehicles"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-vehicle-data
+          description: "Get complete telemetry data for a Tesla vehicle"
+          hints:
+            readOnly: true
+            openWorld: false
+          call: "tesla.get-vehicle-data"
+          with:
+            vehicle_id: "tools.vehicle_id"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-charge-state
+          description: "Get battery and charging status"
+          hints:
+            readOnly: true
+            openWorld: false
+          call: "tesla.get-charge-state"
+          with:
+            vehicle_id: "tools.vehicle_id"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-climate-state
+          description: "Get climate and temperature settings"
+          hints:
+            readOnly: true
+            openWorld: false
+          call: "tesla.get-climate-state"
+          with:
+            vehicle_id: "tools.vehicle_id"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-drive-state
+          description: "Get GPS location and driving state"
+          hints:
+            readOnly: true
+            openWorld: false
+          call: "tesla.get-drive-state"
+          with:
+            vehicle_id: "tools.vehicle_id"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-nearby-charging-sites
+          description: "Find nearby Superchargers and destination chargers"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "tesla.get-nearby-charging-sites"
+          with:
+            vehicle_id: "tools.vehicle_id"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: wake-up-vehicle
+          description: "Wake a sleeping Tesla to enable commands"
+          hints:
+            readOnly: false
+            destructive: false
+            idempotent: true
+          call: "tesla.wake-up-vehicle"
+          with:
+            vehicle_id: "tools.vehicle_id"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: lock-doors
+          description: "Lock all Tesla vehicle doors"
+          hints:
+            readOnly: false
+            destructive: false
+            idempotent: true
+          call: "tesla.lock-doors"
+          with:
+            vehicle_id: "tools.vehicle_id"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: unlock-doors
+          description: "Unlock all Tesla vehicle doors"
+          hints:
+            readOnly: false
+            destructive: false
+            idempotent: true
+          call: "tesla.unlock-doors"
+          with:
+            vehicle_id: "tools.vehicle_id"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: start-climate
+          description: "Start climate pre-conditioning on a Tesla"
+          hints:
+            readOnly: false
+            destructive: false
+            idempotent: true
+          call: "tesla.start-climate"
+          with:
+            vehicle_id: "tools.vehicle_id"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: stop-climate
+          description: "Stop climate control on a Tesla"
+          hints:
+            readOnly: false
+            destructive: false
+            idempotent: true
+          call: "tesla.stop-climate"
+          with:
+            vehicle_id: "tools.vehicle_id"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: start-charging
+          description: "Start charging a Tesla vehicle"
+          hints:
+            readOnly: false
+            destructive: false
+            idempotent: true
+          call: "tesla.start-charging"
+          with:
+            vehicle_id: "tools.vehicle_id"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: stop-charging
+          description: "Stop charging a Tesla vehicle"
+          hints:
+            readOnly: false
+            destructive: false
+            idempotent: true
+          call: "tesla.stop-charging"
+          with:
+            vehicle_id: "tools.vehicle_id"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: set-sentry-mode
+          description: "Enable or disable Tesla Sentry Mode"
+          hints:
+            readOnly: false
+            destructive: false
+            idempotent: true
+          call: "tesla.set-sentry-mode"
+          with:
+            vehicle_id: "tools.vehicle_id"
+            on: "tools.on"
+          outputParameters:
+            - type: object
+              mapping: "$."
