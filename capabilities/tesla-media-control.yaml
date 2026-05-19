@@ -1,0 +1,378 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Tesla API — Media Control
+  description: 'Tesla API — Media Control. 8 operations. Lead operation: Tesla Adjust Volume. Self-contained Naftiko capability
+    covering one Tesla business surface.'
+  tags:
+  - Tesla
+  - Media Control
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    TESLA_API_KEY: TESLA_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: tesla-media-control
+    baseUri: https://owner-api.teslamotors.com
+    description: Tesla API — Media Control business capability. Self-contained, no shared references.
+    resources:
+    - name: api-1-vehicles-vehicle_id-command-adjust_volume
+      path: /api/1/vehicles/{vehicle_id}/command/adjust_volume
+      operations:
+      - name: mediaadjustvolume
+        method: POST
+        description: Tesla Adjust Volume
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: vehicle_id
+          in: path
+          type: string
+          description: The id of the Vehicle.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: api-1-vehicles-vehicle_id-command-media_next_fav
+      path: /api/1/vehicles/{vehicle_id}/command/media_next_fav
+      operations:
+      - name: medianextfavorite
+        method: POST
+        description: Tesla Next Favorite
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: vehicle_id
+          in: path
+          type: string
+          description: The id of the Vehicle.
+          required: true
+    - name: api-1-vehicles-vehicle_id-command-media_next_track
+      path: /api/1/vehicles/{vehicle_id}/command/media_next_track
+      operations:
+      - name: medianexttrack
+        method: POST
+        description: Tesla Next Track
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: vehicle_id
+          in: path
+          type: string
+          description: The id of the Vehicle.
+          required: true
+    - name: api-1-vehicles-vehicle_id-command-media_prev_fav
+      path: /api/1/vehicles/{vehicle_id}/command/media_prev_fav
+      operations:
+      - name: mediaprevfavorite
+        method: POST
+        description: Tesla Previous Favorite
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: vehicle_id
+          in: path
+          type: string
+          description: The id of the Vehicle.
+          required: true
+    - name: api-1-vehicles-vehicle_id-command-media_prev_track
+      path: /api/1/vehicles/{vehicle_id}/command/media_prev_track
+      operations:
+      - name: mediaprevtrack
+        method: POST
+        description: Tesla Previous Track
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: vehicle_id
+          in: path
+          type: string
+          description: The id of the Vehicle.
+          required: true
+    - name: api-1-vehicles-vehicle_id-command-media_toggle_playback
+      path: /api/1/vehicles/{vehicle_id}/command/media_toggle_playback
+      operations:
+      - name: mediatoggleplayback
+        method: POST
+        description: Tesla Pause/Play Media
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: vehicle_id
+          in: path
+          type: string
+          description: The id of the Vehicle.
+          required: true
+    - name: api-1-vehicles-vehicle_id-command-media_volume_down
+      path: /api/1/vehicles/{vehicle_id}/command/media_volume_down
+      operations:
+      - name: mediavolumedown
+        method: POST
+        description: Tesla Volume Down
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: vehicle_id
+          in: path
+          type: string
+          description: The id of the Vehicle.
+          required: true
+    - name: api-1-vehicles-vehicle_id-command-media_volume_up
+      path: /api/1/vehicles/{vehicle_id}/command/media_volume_up
+      operations:
+      - name: mediavolumeup
+        method: POST
+        description: Tesla Volume Up
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: vehicle_id
+          in: path
+          type: string
+          description: The id of the Vehicle.
+          required: true
+  exposes:
+  - type: rest
+    namespace: tesla-media-control-rest
+    port: 8080
+    description: REST adapter for Tesla API — Media Control. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/api/1/vehicles/{vehicle-id}/command/adjust-volume
+      name: api-1-vehicles-vehicle-id-command-adjust-volume
+      description: REST surface for api-1-vehicles-vehicle_id-command-adjust_volume.
+      operations:
+      - method: POST
+        name: mediaadjustvolume
+        description: Tesla Adjust Volume
+        call: tesla-media-control.mediaadjustvolume
+        with:
+          vehicle_id: rest.vehicle_id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/1/vehicles/{vehicle-id}/command/media-next-fav
+      name: api-1-vehicles-vehicle-id-command-media-next-fav
+      description: REST surface for api-1-vehicles-vehicle_id-command-media_next_fav.
+      operations:
+      - method: POST
+        name: medianextfavorite
+        description: Tesla Next Favorite
+        call: tesla-media-control.medianextfavorite
+        with:
+          vehicle_id: rest.vehicle_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/1/vehicles/{vehicle-id}/command/media-next-track
+      name: api-1-vehicles-vehicle-id-command-media-next-track
+      description: REST surface for api-1-vehicles-vehicle_id-command-media_next_track.
+      operations:
+      - method: POST
+        name: medianexttrack
+        description: Tesla Next Track
+        call: tesla-media-control.medianexttrack
+        with:
+          vehicle_id: rest.vehicle_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/1/vehicles/{vehicle-id}/command/media-prev-fav
+      name: api-1-vehicles-vehicle-id-command-media-prev-fav
+      description: REST surface for api-1-vehicles-vehicle_id-command-media_prev_fav.
+      operations:
+      - method: POST
+        name: mediaprevfavorite
+        description: Tesla Previous Favorite
+        call: tesla-media-control.mediaprevfavorite
+        with:
+          vehicle_id: rest.vehicle_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/1/vehicles/{vehicle-id}/command/media-prev-track
+      name: api-1-vehicles-vehicle-id-command-media-prev-track
+      description: REST surface for api-1-vehicles-vehicle_id-command-media_prev_track.
+      operations:
+      - method: POST
+        name: mediaprevtrack
+        description: Tesla Previous Track
+        call: tesla-media-control.mediaprevtrack
+        with:
+          vehicle_id: rest.vehicle_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/1/vehicles/{vehicle-id}/command/media-toggle-playback
+      name: api-1-vehicles-vehicle-id-command-media-toggle-playback
+      description: REST surface for api-1-vehicles-vehicle_id-command-media_toggle_playback.
+      operations:
+      - method: POST
+        name: mediatoggleplayback
+        description: Tesla Pause/Play Media
+        call: tesla-media-control.mediatoggleplayback
+        with:
+          vehicle_id: rest.vehicle_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/1/vehicles/{vehicle-id}/command/media-volume-down
+      name: api-1-vehicles-vehicle-id-command-media-volume-down
+      description: REST surface for api-1-vehicles-vehicle_id-command-media_volume_down.
+      operations:
+      - method: POST
+        name: mediavolumedown
+        description: Tesla Volume Down
+        call: tesla-media-control.mediavolumedown
+        with:
+          vehicle_id: rest.vehicle_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/1/vehicles/{vehicle-id}/command/media-volume-up
+      name: api-1-vehicles-vehicle-id-command-media-volume-up
+      description: REST surface for api-1-vehicles-vehicle_id-command-media_volume_up.
+      operations:
+      - method: POST
+        name: mediavolumeup
+        description: Tesla Volume Up
+        call: tesla-media-control.mediavolumeup
+        with:
+          vehicle_id: rest.vehicle_id
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: tesla-media-control-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Tesla API — Media Control. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: tesla-adjust-volume
+      description: Tesla Adjust Volume
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: tesla-media-control.mediaadjustvolume
+      with:
+        vehicle_id: tools.vehicle_id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: tesla-next-favorite
+      description: Tesla Next Favorite
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: tesla-media-control.medianextfavorite
+      with:
+        vehicle_id: tools.vehicle_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: tesla-next-track
+      description: Tesla Next Track
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: tesla-media-control.medianexttrack
+      with:
+        vehicle_id: tools.vehicle_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: tesla-previous-favorite
+      description: Tesla Previous Favorite
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: tesla-media-control.mediaprevfavorite
+      with:
+        vehicle_id: tools.vehicle_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: tesla-previous-track
+      description: Tesla Previous Track
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: tesla-media-control.mediaprevtrack
+      with:
+        vehicle_id: tools.vehicle_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: tesla-pause-play-media
+      description: Tesla Pause/Play Media
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: tesla-media-control.mediatoggleplayback
+      with:
+        vehicle_id: tools.vehicle_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: tesla-volume-down
+      description: Tesla Volume Down
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: tesla-media-control.mediavolumedown
+      with:
+        vehicle_id: tools.vehicle_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: tesla-volume-up
+      description: Tesla Volume Up
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: tesla-media-control.mediavolumeup
+      with:
+        vehicle_id: tools.vehicle_id
+      outputParameters:
+      - type: object
+        mapping: $.
