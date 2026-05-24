@@ -105,6 +105,8 @@ common:
   - name: Tesla Postman Collection
     url: https://documenter.getpostman.com/view/781424/2s9YRCWB4f
     type: Postman
+  - type: LLMsTxt
+    url: https://tesla-api.timdorr.com/llms.txt
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
