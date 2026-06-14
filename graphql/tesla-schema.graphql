@@ -1,0 +1,743 @@
+"""
+Tesla Fleet API - Conceptual GraphQL Schema
+Based on the Tesla Fleet API (https://developer.tesla.com/docs/fleet-api)
+and community-documented Owner API (https://tesla-api.timdorr.com/)
+"""
+
+scalar DateTime
+scalar JSON
+
+# ----- OAuth / Auth -----
+
+type Token {
+  accessToken: String!
+  refreshToken: String!
+  expiresIn: Int!
+  tokenType: String!
+  scope: String
+  createdAt: DateTime
+}
+
+type AccessToken {
+  token: String!
+  expiresAt: DateTime!
+  scopes: [String!]!
+  clientId: String!
+}
+
+type RefreshToken {
+  token: String!
+  issuedAt: DateTime!
+  clientId: String!
+}
+
+type OAuthClient {
+  clientId: String!
+  clientName: String!
+  redirectUris: [String!]!
+  scopes: [String!]!
+  createdAt: DateTime
+}
+
+type Application {
+  id: ID!
+  name: String!
+  description: String
+  clientId: String!
+  status: String
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+# ----- Fleet / Vehicle List -----
+
+type VehicleList {
+  count: Int!
+  vehicles: [Vehicle!]!
+}
+
+type DataRequest {
+  requestId: ID!
+  vehicleId: ID!
+  fields: [String!]!
+  status: String!
+  createdAt: DateTime
+  completedAt: DateTime
+  result: JSON
+}
+
+# ----- Core Vehicle -----
+
+type Vehicle {
+  id: ID!
+  vehicleId: Long
+  vin: String!
+  displayName: String
+  optionCodes: String
+  color: String
+  accessType: String
+  tokens: [String!]
+  state: String
+  inService: Boolean
+  idS: String
+  calendarEnabled: Boolean
+  apiVersion: Int
+  backseatToken: String
+  backseatTokenUpdatedAt: DateTime
+  vehicleConfig: VehicleConfig
+  vehicleState: VehicleState
+  driveState: DriveState
+  chargingState: ChargingState
+  climateState: ClimateState
+  mediaState: MediaState
+  softwareUpdate: SoftwareUpdate
+  autopilot: AutopilotState
+  tirePressure: TirePressure
+  odometer: OdoReading
+}
+
+scalar Long
+
+type VehicleConfig {
+  canAcceptNavigationRequests: Boolean
+  canActuateTrunks: Boolean
+  carSpecialType: String
+  carType: String
+  chargePortType: String
+  defaultChargeToMax: Boolean
+  ece47: Boolean
+  euVehicle: Boolean
+  exteriorColor: String
+  hasAirSuspension: Boolean
+  hasLudicrousMode: Boolean
+  keyVersion: Int
+  motorizedChargePort: Boolean
+  plg: Boolean
+  rearSeatHeaters: Int
+  rearSeatType: Int
+  rhd: Boolean
+  roofColor: String
+  seatType: Int
+  spoilerType: String
+  sunRoofInstalled: Int
+  thirdRowSeats: String
+  timestamp: DateTime
+  useRangeBadgeMetric: Boolean
+  wheelType: String
+}
+
+type VehicleState {
+  apiVersion: Int
+  autoparkState: String
+  autoparkStateV2: String
+  autoparkStyle: String
+  calendarSupported: Boolean
+  carVersion: String
+  centerDisplayState: Int
+  df: Int
+  dr: Int
+  fdWindow: Int
+  fpWindow: Int
+  ft: Int
+  homelinkDeviceCount: Int
+  homelinkNearby: Boolean
+  isUserPresent: Boolean
+  lastAutoparkError: String
+  locked: Boolean
+  mediaState: MediaState
+  notificationsSupported: Boolean
+  odometer: Float
+  parsedCalendarSupported: Boolean
+  pf: Int
+  pr: Int
+  rdWindow: Int
+  remoteStart: Boolean
+  remoteStartEnabled: Boolean
+  remoteStartSupported: Boolean
+  rpWindow: Int
+  rt: Int
+  sentryMode: Boolean
+  sentryModeAvailable: Boolean
+  smartSummonAvailable: Boolean
+  softwareUpdate: SoftwareUpdate
+  speedLimitMode: SpeedLimitMode
+  summonStandbyModeEnabled: Boolean
+  timestamp: DateTime
+  valetMode: Boolean
+  valetPinNeeded: Boolean
+  vehicleName: String
+}
+
+type SpeedLimitMode {
+  active: Boolean
+  currentLimitMph: Float
+  maxLimitMph: Float
+  minLimitMph: Float
+  pinCodeSet: Boolean
+}
+
+# ----- Drive State -----
+
+type DriveState {
+  gpsAsOf: Int
+  heading: Int
+  latitude: Float
+  longitude: Float
+  nativeLatitude: Float
+  nativeLongitude: Float
+  nativeLocationSupported: Int
+  nativeType: String
+  power: Int
+  shiftState: String
+  speed: Float
+  timestamp: DateTime
+  navStatus: NavStatus
+}
+
+# ----- Charging -----
+
+type ChargingState {
+  batteryHeaterOn: Boolean
+  batteryLevel: Int
+  batteryRange: Float
+  chargeAmps: Float
+  chargeCurrentRequest: Int
+  chargeCurrentRequestMax: Int
+  chargeEnableRequest: Boolean
+  chargeEnergyAdded: Float
+  chargeLimitSoc: Int
+  chargeLimitSocMax: Int
+  chargeLimitSocMin: Int
+  chargeLimitSocStd: Int
+  chargeMilesAddedIdeal: Float
+  chargeMilesAddedRated: Float
+  chargePortColdWeatherMode: Boolean
+  chargePortDoorOpen: Boolean
+  chargePortLatch: String
+  chargeRate: Float
+  chargeToMaxRange: Boolean
+  chargerActualCurrent: Int
+  chargerPhases: Int
+  chargerPilotCurrent: Int
+  chargerPower: Int
+  chargerVoltage: Int
+  chargingState: String
+  connChargeCable: String
+  estBatteryRange: Float
+  fastChargerBrand: String
+  fastChargerPresent: Boolean
+  fastChargerType: String
+  fullRangeGratedRange: Float
+  idealBatteryRange: Float
+  managedChargingActive: Boolean
+  managedChargingStartTime: DateTime
+  managedChargingUserCanceled: Boolean
+  maxRangeChargeCounter: Int
+  minutesToFullCharge: Int
+  notEnoughPowerToHeat: Boolean
+  scheduledChargingMode: String
+  scheduledChargingPending: Boolean
+  scheduledChargingStartTime: DateTime
+  scheduledDepartureTime: DateTime
+  superchargerSessionTrips: Int
+  timestamp: DateTime
+  timeToFullCharge: Float
+  tripCharging: Boolean
+  usableBatteryLevel: Int
+  userChargeEnableRequest: Boolean
+}
+
+type ChargingSession {
+  sessionId: ID!
+  vehicleId: ID!
+  startedAt: DateTime!
+  endedAt: DateTime
+  energyAdded: Float
+  chargeLimitSoc: Int
+  location: String
+  supercharger: Supercharger
+  cost: Float
+  currency: String
+}
+
+type ChargingSchedule {
+  id: ID!
+  vehicleId: ID!
+  enabled: Boolean!
+  chargingDays: [String!]
+  startTime: String
+  endTime: String
+  chargeLimitSoc: Int
+}
+
+# ----- Superchargers / Nearby Chargers -----
+
+type Supercharger {
+  id: ID!
+  name: String!
+  latitude: Float!
+  longitude: Float!
+  address: String
+  city: String
+  state: String
+  country: String
+  totalStalls: Int
+  availableStalls: Int
+  fastCharger: Boolean
+  maxPowerKw: Float
+  amenities: String
+  openToPublic: Boolean
+}
+
+type NearbyCharger {
+  chargerId: ID!
+  name: String!
+  type: String
+  latitude: Float
+  longitude: Float
+  distanceMiles: Float
+  availableStalls: Int
+  totalStalls: Int
+}
+
+# ----- Climate -----
+
+type ClimateState {
+  allowCabinOverheatProtection: Boolean
+  autoSeatClimateLeft: Boolean
+  autoSeatClimateRight: Boolean
+  batteryHeater: Boolean
+  batteryHeaterNoPower: Boolean
+  cabinOverheatProtection: String
+  cabinOverheatProtectionActivelyCooling: Boolean
+  climateKeeperMode: String
+  defrostMode: Int
+  driverTempSetting: Float
+  fanStatus: Int
+  hvacAutoRequest: String
+  insideTemp: Float
+  isCabinConditioning: Boolean
+  isClimateOn: Boolean
+  isFrontDefrosterOn: Boolean
+  isPreconditioning: Boolean
+  isRearDefrosterOn: Boolean
+  leftTempDirection: Int
+  maxAvailTemp: Float
+  minAvailTemp: Float
+  outsideTemp: Float
+  passengerTempSetting: Float
+  remotHeaterControlEnabled: Boolean
+  rightTempDirection: Int
+  seatHeaterLeft: Int
+  seatHeaterRearCenter: Int
+  seatHeaterRearLeft: Int
+  seatHeaterRearRight: Int
+  seatHeaterRight: Int
+  sideMirrorHeaters: Boolean
+  steeringWheelHeatLevel: Int
+  timestamp: DateTime
+  wiperBladeHeater: Boolean
+  bioweaponsDefenseMode: BioWeapons
+  fanSpeed: FanSpeed
+}
+
+type BioWeapons {
+  mode: String
+  active: Boolean
+  available: Boolean
+}
+
+type FanSpeed {
+  level: Int!
+  autoMode: Boolean
+}
+
+# ----- Media -----
+
+type MediaState {
+  remoteControlEnabled: Boolean
+  currentPlayback: MediaPlayback
+}
+
+type MediaPlayback {
+  artistName: String
+  trackName: String
+  albumName: String
+  source: String
+  isPlaying: Boolean
+  volume: Float
+  duration: Float
+  position: Float
+  mediaQueue: MediaQueue
+}
+
+type MediaQueue {
+  items: [MediaItem!]!
+  currentIndex: Int
+}
+
+type MediaItem {
+  id: ID!
+  title: String
+  artist: String
+  album: String
+  source: String
+  durationSeconds: Float
+  artUrl: String
+}
+
+# ----- Software / Firmware -----
+
+type SoftwareUpdate {
+  downloadPerc: Int
+  expectedDurationSec: Int
+  installPerc: Int
+  scheduleTimeSec: Int
+  softwareUpdatesOptedIn: Boolean
+  status: String
+  version: String
+  warningTimeRemainingSec: Int
+}
+
+# ----- Vehicle Commands -----
+
+type VehicleCommand {
+  id: ID!
+  vehicleId: ID!
+  commandName: String!
+  parameters: JSON
+  result: Boolean
+  reason: String
+  issuedAt: DateTime
+}
+
+type WakeUp {
+  vehicleId: ID!
+  state: String!
+  timestamp: DateTime!
+}
+
+type MobileAccess {
+  vehicleId: ID!
+  enabled: Boolean!
+  updatedAt: DateTime
+}
+
+type FleetAPI {
+  version: String
+  endpoints: [String!]
+  rateLimits: JSON
+  baseUrl: String
+}
+
+# ----- Telemetry / Sync -----
+
+type TeleSync {
+  vehicleId: ID!
+  fields: [String!]!
+  intervalSeconds: Int
+  active: Boolean
+  lastSyncAt: DateTime
+}
+
+# ----- Navigation -----
+
+type NavStatus {
+  activeRouteName: String
+  activeRouteUnrestricted: Boolean
+  activeRouteLatitude: Float
+  activeRouteLongitude: Float
+  activeRouteDestination: String
+  activeRouteMilesToArrival: Float
+  activeRouteMinutesToArrival: Float
+  activeRouteTrafficMinutesDelay: Float
+  fastestRoute: Boolean
+  origin: String
+  originLatitude: Float
+  originLongitude: Float
+  route: NavRoute
+}
+
+type NavRoute {
+  routeId: ID!
+  origin: String
+  destination: String
+  waypoints: [RouteWaypoint!]!
+  totalDistanceMiles: Float
+  totalDurationMinutes: Float
+  trafficDelayMinutes: Float
+}
+
+type RouteWaypoint {
+  order: Int!
+  latitude: Float!
+  longitude: Float!
+  name: String
+  address: String
+}
+
+# ----- Energy -----
+
+type EnergyHistory {
+  siteId: ID!
+  period: String
+  dataPoints: [EnergyDataPoint!]!
+}
+
+type EnergyDataPoint {
+  timestamp: DateTime!
+  solarPowerWatts: Float
+  batteryPowerWatts: Float
+  gridPowerWatts: Float
+  loadPowerWatts: Float
+}
+
+type EnergyLive {
+  siteId: ID!
+  solarPowerWatts: Float
+  batteryPowerWatts: Float
+  gridPowerWatts: Float
+  loadPowerWatts: Float
+  percentageCharged: Float
+  backupCapableEnabled: Boolean
+  stormModeActive: Boolean
+  timestamp: DateTime
+}
+
+type EnergyEstimate {
+  siteId: ID!
+  estimatedSolarProductionWh: Float
+  estimatedBatteryStorageWh: Float
+  estimatedGridUsageWh: Float
+  period: String
+  generatedAt: DateTime
+}
+
+# ----- Alerts / Diagnostics -----
+
+type AlertLog {
+  id: ID!
+  vehicleId: ID!
+  alertName: String!
+  severity: String
+  message: String
+  occurredAt: DateTime!
+  resolvedAt: DateTime
+  faultCodes: [FaultCode!]
+}
+
+type FaultCode {
+  code: String!
+  description: String
+  subsystem: String
+  severity: String
+  occurredAt: DateTime
+}
+
+type DiagReport {
+  reportId: ID!
+  vehicleId: ID!
+  generatedAt: DateTime!
+  items: [ServiceItem!]!
+  summary: String
+}
+
+type ServiceItem {
+  id: ID!
+  name: String!
+  status: String
+  description: String
+  priority: String
+  estimatedCostUsd: Float
+  scheduledDate: DateTime
+}
+
+# ----- Sentry Mode -----
+
+type Sentry {
+  vehicleId: ID!
+  enabled: Boolean!
+  availableStorageGb: Float
+  usedStorageGb: Float
+  clips: [SentryClip!]
+}
+
+type SentryClip {
+  clipId: ID!
+  vehicleId: ID!
+  recordedAt: DateTime!
+  durationSeconds: Int
+  triggerEvent: SentryEvent
+  thumbnailUrl: String
+  downloadUrl: String
+}
+
+type SentryEvent {
+  eventId: ID!
+  type: String!
+  description: String
+  latitude: Float
+  longitude: Float
+  severity: String
+  timestamp: DateTime!
+}
+
+# ----- Autopilot -----
+
+type Autopilot {
+  vehicleId: ID!
+  available: Boolean!
+  enabled: Boolean!
+  currentState: AutopilotState
+  alerts: [AutopilotAlert!]
+}
+
+type AutopilotState {
+  active: Boolean
+  mode: String
+  laneChangeRequest: String
+  laneChangeState: String
+  speed: Float
+  followDistance: Float
+  timestamp: DateTime
+}
+
+type AutopilotAlert {
+  alertId: ID!
+  message: String!
+  severity: String
+  acknowledgeRequired: Boolean
+  timestamp: DateTime!
+}
+
+# ----- Dashcam -----
+
+type DashcamClip {
+  clipId: ID!
+  vehicleId: ID!
+  recordedAt: DateTime!
+  durationSeconds: Int
+  reason: String
+  latitude: Float
+  longitude: Float
+  downloadUrl: String
+}
+
+# ----- Tire Pressure -----
+
+type TirePressure {
+  vehicleId: ID!
+  timestamp: DateTime
+  frontLeft: Float
+  frontRight: Float
+  rearLeft: Float
+  rearRight: Float
+  unit: String
+  warningFrontLeft: Boolean
+  warningFrontRight: Boolean
+  warningRearLeft: Boolean
+  warningRearRight: Boolean
+}
+
+# ----- Odometer -----
+
+type OdoReading {
+  vehicleId: ID!
+  reading: Float!
+  unit: String
+  timestamp: DateTime
+}
+
+# ----- Query -----
+
+type Query {
+  vehicle(id: ID!): Vehicle
+  vehicles(limit: Int, offset: Int): VehicleList
+  vehicleState(vehicleId: ID!): VehicleState
+  vehicleConfig(vehicleId: ID!): VehicleConfig
+  driveState(vehicleId: ID!): DriveState
+  chargingState(vehicleId: ID!): ChargingState
+  chargingSession(sessionId: ID!): ChargingSession
+  chargingSessions(vehicleId: ID!, limit: Int, offset: Int): [ChargingSession!]!
+  chargingSchedule(vehicleId: ID!): ChargingSchedule
+  climateState(vehicleId: ID!): ClimateState
+  mediaState(vehicleId: ID!): MediaState
+  softwareUpdate(vehicleId: ID!): SoftwareUpdate
+  autopilot(vehicleId: ID!): Autopilot
+  autopilotState(vehicleId: ID!): AutopilotState
+  navStatus(vehicleId: ID!): NavStatus
+  navRoute(vehicleId: ID!): NavRoute
+  nearbySuperchargers(vehicleId: ID!, count: Int): [NearbyCharger!]!
+  supercharger(chargerId: ID!): Supercharger
+  energyHistory(siteId: ID!, period: String!): EnergyHistory
+  energyLive(siteId: ID!): EnergyLive
+  energyEstimate(siteId: ID!): EnergyEstimate
+  sentry(vehicleId: ID!): Sentry
+  sentryClips(vehicleId: ID!, limit: Int, offset: Int): [SentryClip!]!
+  dashcamClips(vehicleId: ID!, limit: Int, offset: Int): [DashcamClip!]!
+  alertLogs(vehicleId: ID!, limit: Int, offset: Int): [AlertLog!]!
+  faultCodes(vehicleId: ID!): [FaultCode!]!
+  diagReport(vehicleId: ID!): DiagReport
+  tirePressure(vehicleId: ID!): TirePressure
+  odometer(vehicleId: ID!): OdoReading
+  mobileAccess(vehicleId: ID!): MobileAccess
+  dataRequest(requestId: ID!): DataRequest
+  oauthClient(clientId: ID!): OAuthClient
+  application(id: ID!): Application
+  fleetAPI: FleetAPI
+  teleSync(vehicleId: ID!): TeleSync
+}
+
+# ----- Mutation -----
+
+type Mutation {
+  wakeUp(vehicleId: ID!): WakeUp
+  lockDoors(vehicleId: ID!): VehicleCommand
+  unlockDoors(vehicleId: ID!): VehicleCommand
+  honkHorn(vehicleId: ID!): VehicleCommand
+  flashLights(vehicleId: ID!): VehicleCommand
+  startClimate(vehicleId: ID!, driverTemp: Float, passengerTemp: Float): VehicleCommand
+  stopClimate(vehicleId: ID!): VehicleCommand
+  setBioWeaponsMode(vehicleId: ID!, on: Boolean!): VehicleCommand
+  setFanSpeed(vehicleId: ID!, level: Int!): VehicleCommand
+  startCharging(vehicleId: ID!): VehicleCommand
+  stopCharging(vehicleId: ID!): VehicleCommand
+  setChargeLimit(vehicleId: ID!, percent: Int!): VehicleCommand
+  setChargeAmps(vehicleId: ID!, amps: Int!): VehicleCommand
+  setChargingSchedule(vehicleId: ID!, enabled: Boolean!, startTime: String): VehicleCommand
+  openChargePort(vehicleId: ID!): VehicleCommand
+  closeChargePort(vehicleId: ID!): VehicleCommand
+  navigateTo(vehicleId: ID!, latitude: Float!, longitude: Float!, name: String): VehicleCommand
+  navigateToSupercharger(vehicleId: ID!, chargerId: ID!): VehicleCommand
+  sendNavRoute(vehicleId: ID!, route: ID!): VehicleCommand
+  enableSentryMode(vehicleId: ID!): VehicleCommand
+  disableSentryMode(vehicleId: ID!): VehicleCommand
+  triggerHomelink(vehicleId: ID!): VehicleCommand
+  openTrunk(vehicleId: ID!): VehicleCommand
+  closeTrunk(vehicleId: ID!): VehicleCommand
+  enableMobileAccess(vehicleId: ID!, enabled: Boolean!): VehicleCommand
+  setSeatHeater(vehicleId: ID!, seat: Int!, level: Int!): VehicleCommand
+  setSteeringWheelHeat(vehicleId: ID!, on: Boolean!): VehicleCommand
+  enableValetMode(vehicleId: ID!, on: Boolean!, password: String): VehicleCommand
+  setSpeedLimit(vehicleId: ID!, limitMph: Float!): VehicleCommand
+  clearSpeedLimit(vehicleId: ID!, pin: String!): VehicleCommand
+  activateSummon(vehicleId: ID!, action: String!): VehicleCommand
+  refreshToken(refreshToken: String!): Token
+  revokeToken(token: String!): Boolean
+  startTeleSync(vehicleId: ID!, fields: [String!]!, intervalSeconds: Int): TeleSync
+  stopTeleSync(vehicleId: ID!): Boolean
+}
+
+# ----- Subscription -----
+
+type Subscription {
+  vehicleStateChanged(vehicleId: ID!): VehicleState
+  driveStateChanged(vehicleId: ID!): DriveState
+  chargingStateChanged(vehicleId: ID!): ChargingState
+  climateStateChanged(vehicleId: ID!): ClimateState
+  softwareUpdateChanged(vehicleId: ID!): SoftwareUpdate
+  alertLogCreated(vehicleId: ID!): AlertLog
+  sentryEventDetected(vehicleId: ID!): SentryEvent
+  autopilotAlertIssued(vehicleId: ID!): AutopilotAlert
+  energyLiveUpdated(siteId: ID!): EnergyLive
+}
