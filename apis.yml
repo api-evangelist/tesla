@@ -51,13 +51,13 @@ apis:
     type: Billing
   - url: https://raw.githubusercontent.com/api-evangelist/tesla/refs/heads/main/openapi/tesla-openapi-original.yml
     type: OpenAPI
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/tesla-authentication.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/tesla-media-control.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/tesla-vehicle-commands.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/tesla-vehicles.yaml
   - url: graphql/tesla-graphql.md
     type: GraphQL
@@ -103,14 +103,14 @@ common:
   type: Website
 - name: TeslaPy SDK
   url: https://github.com/tdorssers/TeslaPy
-  type: SDK
+  type: SDKs
 - name: Tesla API Ruby Gem
   url: https://github.com/timdorr/tesla-api
-  type: SDK
+  type: SDKs
 - name: Tesla Postman Collection
   url: https://documenter.getpostman.com/view/781424/2s9YRCWB4f
   type: Postman
-- type: LLMsTxt
+- type: LlmsText
   url: https://tesla-api.timdorr.com/llms.txt
 maintainers:
 - FN: Kin Lane
