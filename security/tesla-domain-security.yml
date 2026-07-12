@@ -1,0 +1,27 @@
+generated: '2026-07-11'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: developer.tesla.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Nov 17 23:59:59 2026 GMT
+  hsts: true
+  hsts_max_age: 15768000
+- host: www.tesla.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Nov 17 23:59:59 2026 GMT
+  hsts: null
+- host: fleet-api.prd.na.vn.cloud.tesla.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Dec 18 23:59:59 2026 GMT
+  hsts: null
+domains:
+- domain: tesla.com
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: reject

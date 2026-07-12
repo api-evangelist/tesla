@@ -81,6 +81,10 @@ apis:
   - url: https://raw.githubusercontent.com/api-evangelist/tesla/refs/heads/main/openapi/tesla-openapi-original.yml
     type: OpenAPI
 common:
+- type: VulnerabilityDisclosure
+  url: security/tesla-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/tesla-domain-security.yml
 - type: LinkedIn
   url: https://www.linkedin.com/company/tesla-motors
 - name: Tesla Developer Portal
