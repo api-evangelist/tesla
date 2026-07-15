@@ -81,6 +81,8 @@ apis:
   - url: https://raw.githubusercontent.com/api-evangelist/tesla/refs/heads/main/openapi/tesla-openapi-original.yml
     type: OpenAPI
 common:
+- type: AgenticAccess
+  url: agentic-access/tesla-agentic-access.yml
 - type: VulnerabilityDisclosure
   url: security/tesla-vulnerability-disclosure.yml
 - type: DomainSecurity
