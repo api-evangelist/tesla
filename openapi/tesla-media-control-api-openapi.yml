@@ -1,0 +1,210 @@
+openapi: 3.0.1
+info:
+  title: Tesla Authentication Media Control API
+  description: API for controlling Tesla vehicles
+  version: '1.0'
+servers:
+- url: https://owner-api.teslamotors.com/
+tags:
+- name: Media Control
+paths:
+  /api/1/vehicles/{vehicle_id}/command/media_toggle_playback:
+    post:
+      tags:
+      - Media Control
+      summary: Tesla Pause/Play Media
+      description: Pause/Play Media
+      operationId: MediaTogglePlayback
+      parameters:
+      - name: vehicle_id
+        in: path
+        description: The id of the Vehicle.
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommandResponse'
+  /api/1/vehicles/{vehicle_id}/command/media_next_track:
+    post:
+      tags:
+      - Media Control
+      summary: Tesla Next Track
+      description: Next Track
+      operationId: MediaNextTrack
+      parameters:
+      - name: vehicle_id
+        in: path
+        description: The id of the Vehicle.
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommandResponse'
+  /api/1/vehicles/{vehicle_id}/command/media_prev_track:
+    post:
+      tags:
+      - Media Control
+      summary: Tesla Previous Track
+      description: Previous Track
+      operationId: MediaPrevTrack
+      parameters:
+      - name: vehicle_id
+        in: path
+        description: The id of the Vehicle.
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommandResponse'
+  /api/1/vehicles/{vehicle_id}/command/media_next_fav:
+    post:
+      tags:
+      - Media Control
+      summary: Tesla Next Favorite
+      description: Next Favorite
+      operationId: MediaNextFavorite
+      parameters:
+      - name: vehicle_id
+        in: path
+        description: The id of the Vehicle.
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommandResponse'
+  /api/1/vehicles/{vehicle_id}/command/media_prev_fav:
+    post:
+      tags:
+      - Media Control
+      summary: Tesla Previous Favorite
+      description: Previous Favorite
+      operationId: MediaPrevFavorite
+      parameters:
+      - name: vehicle_id
+        in: path
+        description: The id of the Vehicle.
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommandResponse'
+  /api/1/vehicles/{vehicle_id}/command/media_volume_up:
+    post:
+      tags:
+      - Media Control
+      summary: Tesla Volume Up
+      description: Volume Up
+      operationId: MediaVolumeUp
+      parameters:
+      - name: vehicle_id
+        in: path
+        description: The id of the Vehicle.
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommandResponse'
+  /api/1/vehicles/{vehicle_id}/command/media_volume_down:
+    post:
+      tags:
+      - Media Control
+      summary: Tesla Volume Down
+      description: Volume Down
+      operationId: MediaVolumeDown
+      parameters:
+      - name: vehicle_id
+        in: path
+        description: The id of the Vehicle.
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommandResponse'
+  /api/1/vehicles/{vehicle_id}/command/adjust_volume:
+    post:
+      tags:
+      - Media Control
+      summary: Tesla Adjust Volume
+      description: Adjust Volume
+      operationId: MediaAdjustVolume
+      parameters:
+      - name: vehicle_id
+        in: path
+        description: The id of the Vehicle.
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdjustVolumeRequest'
+        required: true
+      responses:
+        200:
+          description: ''
+          content:
+            application/josn:
+              schema:
+                $ref: '#/components/schemas/CommandResponse'
+      x-codegen-request-body-name: body
+components:
+  schemas:
+    CommandResponse:
+      title: CommandResponse
+      required:
+      - response
+      type: object
+      properties:
+        response:
+          type: object
+          properties:
+            result:
+              type: boolean
+            reason:
+              type: string
+          description: ''
+    AdjustVolumeRequest:
+      title: Adjust Volume request
+      type: object
+      properties:
+        volume:
+          type: number
+          description: Volume level, from 0-11
+          format: int32
+          example: 1
