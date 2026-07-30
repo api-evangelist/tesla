@@ -5,6 +5,18 @@ description: Tesla, Inc. is an American electric vehicle and clean energy compan
   and energy devices with owner-granted permissions, covering vehicle telemetry, remote
   commands, charging management, energy site management, and fleet management capabilities.
 type: Index
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
 image: https://www.tesla.com/favicon.ico
 tags:
 - Automobiles
@@ -19,38 +31,30 @@ created: '2025-02-25'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-- aid: tesla:fleet-api
-  name: Tesla Fleet API
-  description: The Tesla Fleet API is the official partner API providing access to
-    Tesla vehicles and energy devices with owner-granted OAuth permissions. Supports
-    vehicle telemetry, remote vehicle commands, charging management, energy site control,
-    and fleet management for third-party applications.
+- aid: tesla:tesla-authentication-api
+  name: Tesla Authentication API
+  description: The Authentication API from Tesla — 1 operation(s) for authentication.
   humanURL: https://developer.tesla.com/docs/fleet-api
   baseURL: https://fleet-api.prd.na.vn.cloud.tesla.com/api/1
   tags:
-  - Vehicles
-  - Telemetry
-  - Remote Commands
-  - Charging
-  - Energy
-  - Fleet Management
+  - Authentication
   properties:
-  - url: https://developer.tesla.com/docs/fleet-api
-    type: Documentation
-  - url: https://developer.tesla.com/docs/fleet-api/endpoints/vehicle-endpoints
-    type: Documentation
-  - url: https://developer.tesla.com/docs/fleet-api/endpoints/vehicle-commands
-    type: Documentation
-  - url: https://developer.tesla.com/docs/fleet-api/endpoints/charging-endpoints
-    type: Documentation
-  - url: https://developer.tesla.com/docs/fleet-api/endpoints/energy
-    type: Documentation
-  - url: https://developer.tesla.com/docs/fleet-api/authentication/overview
-    type: Authentication
-  - url: https://developer.tesla.com/docs/fleet-api/billing-and-limits
-    type: Billing
-  - url: https://raw.githubusercontent.com/api-evangelist/tesla/refs/heads/main/openapi/tesla-openapi-original.yml
-    type: OpenAPI
+  - type: OpenAPI
+    url: openapi/tesla-authentication-api-openapi.yml
+  - type: Documentation
+    url: https://developer.tesla.com/docs/fleet-api
+  - type: Documentation
+    url: https://developer.tesla.com/docs/fleet-api/endpoints/vehicle-endpoints
+  - type: Documentation
+    url: https://developer.tesla.com/docs/fleet-api/endpoints/vehicle-commands
+  - type: Documentation
+    url: https://developer.tesla.com/docs/fleet-api/endpoints/charging-endpoints
+  - type: Documentation
+    url: https://developer.tesla.com/docs/fleet-api/endpoints/energy
+  - type: Authentication
+    url: https://developer.tesla.com/docs/fleet-api/authentication/overview
+  - type: Billing
+    url: https://developer.tesla.com/docs/fleet-api/billing-and-limits
   - type: X-NaftikoCapability
     url: capabilities/tesla-authentication.yaml
   - type: X-NaftikoCapability
@@ -59,27 +63,126 @@ apis:
     url: capabilities/tesla-vehicle-commands.yaml
   - type: X-NaftikoCapability
     url: capabilities/tesla-vehicles.yaml
-  - url: graphql/tesla-graphql.md
-    type: GraphQL
-- aid: tesla:owner-api
-  name: Tesla Owner API
-  description: The Tesla Owner API (community-documented) provides access to Tesla
-    vehicles via the owner-api.teslamotors.com endpoint. Supports vehicle state retrieval,
-    remote commands, and vehicle management for personal vehicle owners.
-  humanURL: https://tesla-api.timdorr.com/
-  baseURL: https://owner-api.teslamotors.com/api/1
+  - type: GraphQL
+    url: graphql/tesla-graphql.md
+  - type: Documentation
+    url: https://tesla-api.timdorr.com/
+  - type: Repository
+    url: https://github.com/timdorr/tesla-api
+- aid: tesla:tesla-media-control-api
+  name: Tesla Media Control API
+  description: The Media Control API from Tesla — 8 operation(s) for media control.
+  humanURL: https://developer.tesla.com/docs/fleet-api
+  baseURL: https://fleet-api.prd.na.vn.cloud.tesla.com/api/1
+  tags:
+  - Media Control
+  properties:
+  - type: OpenAPI
+    url: openapi/tesla-media-control-api-openapi.yml
+  - type: Documentation
+    url: https://developer.tesla.com/docs/fleet-api
+  - type: Documentation
+    url: https://developer.tesla.com/docs/fleet-api/endpoints/vehicle-endpoints
+  - type: Documentation
+    url: https://developer.tesla.com/docs/fleet-api/endpoints/vehicle-commands
+  - type: Documentation
+    url: https://developer.tesla.com/docs/fleet-api/endpoints/charging-endpoints
+  - type: Documentation
+    url: https://developer.tesla.com/docs/fleet-api/endpoints/energy
+  - type: Authentication
+    url: https://developer.tesla.com/docs/fleet-api/authentication/overview
+  - type: Billing
+    url: https://developer.tesla.com/docs/fleet-api/billing-and-limits
+  - type: X-NaftikoCapability
+    url: capabilities/tesla-authentication.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/tesla-media-control.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/tesla-vehicle-commands.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/tesla-vehicles.yaml
+  - type: GraphQL
+    url: graphql/tesla-graphql.md
+  - type: Documentation
+    url: https://tesla-api.timdorr.com/
+  - type: Repository
+    url: https://github.com/timdorr/tesla-api
+- aid: tesla:tesla-vehicle-commands-api
+  name: Tesla Vehicle Commands API
+  description: The Vehicle Commands API from Tesla — 45 operation(s) for vehicle commands.
+  humanURL: https://developer.tesla.com/docs/fleet-api
+  baseURL: https://fleet-api.prd.na.vn.cloud.tesla.com/api/1
+  tags:
+  - Vehicle Commands
+  properties:
+  - type: OpenAPI
+    url: openapi/tesla-vehicle-commands-api-openapi.yml
+  - type: Documentation
+    url: https://developer.tesla.com/docs/fleet-api
+  - type: Documentation
+    url: https://developer.tesla.com/docs/fleet-api/endpoints/vehicle-endpoints
+  - type: Documentation
+    url: https://developer.tesla.com/docs/fleet-api/endpoints/vehicle-commands
+  - type: Documentation
+    url: https://developer.tesla.com/docs/fleet-api/endpoints/charging-endpoints
+  - type: Documentation
+    url: https://developer.tesla.com/docs/fleet-api/endpoints/energy
+  - type: Authentication
+    url: https://developer.tesla.com/docs/fleet-api/authentication/overview
+  - type: Billing
+    url: https://developer.tesla.com/docs/fleet-api/billing-and-limits
+  - type: X-NaftikoCapability
+    url: capabilities/tesla-authentication.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/tesla-media-control.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/tesla-vehicle-commands.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/tesla-vehicles.yaml
+  - type: GraphQL
+    url: graphql/tesla-graphql.md
+  - type: Documentation
+    url: https://tesla-api.timdorr.com/
+  - type: Repository
+    url: https://github.com/timdorr/tesla-api
+- aid: tesla:tesla-vehicles-api
+  name: Tesla Vehicles API
+  description: The Vehicles API from Tesla — 11 operation(s) for vehicles.
+  humanURL: https://developer.tesla.com/docs/fleet-api
+  baseURL: https://fleet-api.prd.na.vn.cloud.tesla.com/api/1
   tags:
   - Vehicles
-  - Owner API
-  - Remote Commands
-  - Telemetry
   properties:
-  - url: https://tesla-api.timdorr.com/
-    type: Documentation
-  - url: https://github.com/timdorr/tesla-api
-    type: Repository
-  - url: https://raw.githubusercontent.com/api-evangelist/tesla/refs/heads/main/openapi/tesla-openapi-original.yml
-    type: OpenAPI
+  - type: OpenAPI
+    url: openapi/tesla-vehicles-api-openapi.yml
+  - type: Documentation
+    url: https://developer.tesla.com/docs/fleet-api
+  - type: Documentation
+    url: https://developer.tesla.com/docs/fleet-api/endpoints/vehicle-endpoints
+  - type: Documentation
+    url: https://developer.tesla.com/docs/fleet-api/endpoints/vehicle-commands
+  - type: Documentation
+    url: https://developer.tesla.com/docs/fleet-api/endpoints/charging-endpoints
+  - type: Documentation
+    url: https://developer.tesla.com/docs/fleet-api/endpoints/energy
+  - type: Authentication
+    url: https://developer.tesla.com/docs/fleet-api/authentication/overview
+  - type: Billing
+    url: https://developer.tesla.com/docs/fleet-api/billing-and-limits
+  - type: X-NaftikoCapability
+    url: capabilities/tesla-authentication.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/tesla-media-control.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/tesla-vehicle-commands.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/tesla-vehicles.yaml
+  - type: GraphQL
+    url: graphql/tesla-graphql.md
+  - type: Documentation
+    url: https://tesla-api.timdorr.com/
+  - type: Repository
+    url: https://github.com/timdorr/tesla-api
 common:
 - type: AgenticAccess
   url: agentic-access/tesla-agentic-access.yml
