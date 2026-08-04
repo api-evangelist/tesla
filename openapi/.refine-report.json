@@ -1,0 +1,20 @@
+{
+  "provider": "tesla",
+  "sources": [
+    "tesla-authentication-api-openapi.yml",
+    "tesla-media-control-api-openapi.yml",
+    "tesla-vehicle-commands-api-openapi.yml",
+    "tesla-vehicles-api-openapi.yml"
+  ],
+  "outputs": [
+    "tesla-authentication-api-openapi.yml",
+    "tesla-media-control-api-openapi.yml",
+    "tesla-vehicle-commands-api-openapi.yml",
+    "tesla-vehicles-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
