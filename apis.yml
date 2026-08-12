@@ -55,14 +55,6 @@ apis:
     url: https://developer.tesla.com/docs/fleet-api/authentication/overview
   - type: Billing
     url: https://developer.tesla.com/docs/fleet-api/billing-and-limits
-  - type: X-NaftikoCapability
-    url: capabilities/tesla-authentication.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tesla-media-control.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tesla-vehicle-commands.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tesla-vehicles.yaml
   - type: GraphQL
     url: graphql/tesla-graphql.md
   - type: Documentation
@@ -93,14 +85,6 @@ apis:
     url: https://developer.tesla.com/docs/fleet-api/authentication/overview
   - type: Billing
     url: https://developer.tesla.com/docs/fleet-api/billing-and-limits
-  - type: X-NaftikoCapability
-    url: capabilities/tesla-authentication.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tesla-media-control.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tesla-vehicle-commands.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tesla-vehicles.yaml
   - type: GraphQL
     url: graphql/tesla-graphql.md
   - type: Documentation
@@ -131,14 +115,6 @@ apis:
     url: https://developer.tesla.com/docs/fleet-api/authentication/overview
   - type: Billing
     url: https://developer.tesla.com/docs/fleet-api/billing-and-limits
-  - type: X-NaftikoCapability
-    url: capabilities/tesla-authentication.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tesla-media-control.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tesla-vehicle-commands.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tesla-vehicles.yaml
   - type: GraphQL
     url: graphql/tesla-graphql.md
   - type: Documentation
@@ -169,14 +145,6 @@ apis:
     url: https://developer.tesla.com/docs/fleet-api/authentication/overview
   - type: Billing
     url: https://developer.tesla.com/docs/fleet-api/billing-and-limits
-  - type: X-NaftikoCapability
-    url: capabilities/tesla-authentication.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tesla-media-control.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tesla-vehicle-commands.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tesla-vehicles.yaml
   - type: GraphQL
     url: graphql/tesla-graphql.md
   - type: Documentation
@@ -184,6 +152,9 @@ apis:
   - type: Repository
     url: https://github.com/timdorr/tesla-api
 common:
+- type: License
+  name: MIT
+  url: https://github.com/timdorr/tesla-api/blob/master/LICENSE
 - type: AgenticAccess
   url: agentic-access/tesla-agentic-access.yml
 - type: VulnerabilityDisclosure
