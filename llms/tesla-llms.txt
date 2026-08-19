@@ -1,0 +1,48 @@
+# Tesla JSON API (Unofficial)
+
+## Tesla JSON API (Unofficial)
+
+- [Introduction](https://tesla-api.timdorr.com/readme.md)
+- [Authentication](https://tesla-api.timdorr.com/api-basics/authentication.md): The authentication process for the Tesla API
+- [Users](https://tesla-api.timdorr.com/api-basics/users.md): Endpoints for getting information about the current user
+- [Vehicles](https://tesla-api.timdorr.com/api-basics/vehicles.md): Endpoints for getting an account's vehicles
+- [Energy Products](https://tesla-api.timdorr.com/api-basics/products.md): Endpoints for getting an account's energy products
+- [Trip Planner](https://tesla-api.timdorr.com/api-basics/tripplan.md): Endpoints for Trip Planner
+- [State](https://tesla-api.timdorr.com/vehicle/state.md): These endpoints give the state of the various subsystems of the car.
+- [Data](https://tesla-api.timdorr.com/vehicle/state/data.md)
+- [Charge State](https://tesla-api.timdorr.com/vehicle/state/chargestate.md)
+- [Climate State](https://tesla-api.timdorr.com/vehicle/state/climatestate.md)
+- [Drive State](https://tesla-api.timdorr.com/vehicle/state/drivestate.md)
+- [GUI Settings](https://tesla-api.timdorr.com/vehicle/state/guisettings.md)
+- [Vehicle State](https://tesla-api.timdorr.com/vehicle/state/vehiclestate.md)
+- [Vehicle Config](https://tesla-api.timdorr.com/vehicle/state/vehicleconfig.md)
+- [Mobile Enabled](https://tesla-api.timdorr.com/vehicle/state/mobileenabled.md)
+- [Nearby Charging Sites](https://tesla-api.timdorr.com/vehicle/state/nearbychargingsites.md)
+- [Miscellaneous](https://tesla-api.timdorr.com/vehicle/state/misc.md)
+- [Commands](https://tesla-api.timdorr.com/vehicle/commands.md): These endpoints issue various commands to the car.
+- [Wake](https://tesla-api.timdorr.com/vehicle/commands/wake.md)
+- [Alerts](https://tesla-api.timdorr.com/vehicle/commands/alerts.md)
+- [Remote Start](https://tesla-api.timdorr.com/vehicle/commands/remotestart.md)
+- [Homelink](https://tesla-api.timdorr.com/vehicle/commands/homelink.md)
+- [Speed Limit](https://tesla-api.timdorr.com/vehicle/commands/speedlimit.md)
+- [Valet Mode](https://tesla-api.timdorr.com/vehicle/commands/valet.md)
+- [Sentry Mode](https://tesla-api.timdorr.com/vehicle/commands/sentrymode.md)
+- [Doors](https://tesla-api.timdorr.com/vehicle/commands/doors.md)
+- [Frunk/Trunk](https://tesla-api.timdorr.com/vehicle/commands/trunk.md)
+- [Windows](https://tesla-api.timdorr.com/vehicle/commands/windows.md)
+- [Sunroof](https://tesla-api.timdorr.com/vehicle/commands/sunroof.md)
+- [Charging](https://tesla-api.timdorr.com/vehicle/commands/charging.md)
+- [Climate](https://tesla-api.timdorr.com/vehicle/commands/climate.md)
+- [Media](https://tesla-api.timdorr.com/vehicle/commands/media.md)
+- [Sharing](https://tesla-api.timdorr.com/vehicle/commands/sharing.md)
+- [Software Updates](https://tesla-api.timdorr.com/vehicle/commands/softwareupdate.md)
+- [Calendar](https://tesla-api.timdorr.com/vehicle/commands/calendar.md)
+- [Miscellaneous](https://tesla-api.timdorr.com/vehicle/commands/misc.md)
+- [Streaming](https://tesla-api.timdorr.com/vehicle/streaming.md)
+- [Autopark/Summon](https://tesla-api.timdorr.com/vehicle/autopark.md)
+- [Option Codes](https://tesla-api.timdorr.com/vehicle/optioncodes.md)
+- [Overview](https://tesla-api.timdorr.com/energy-products/energy.md): Energy Products API Overview
+- [History](https://tesla-api.timdorr.com/energy-products/energy/history.md)
+- [State](https://tesla-api.timdorr.com/energy-products/energy/state.md)
+- [Commands](https://tesla-api.timdorr.com/energy-products/energy/commands.md)
+- [Endpoints File](https://tesla-api.timdorr.com/miscellaneous/endpoints.md)

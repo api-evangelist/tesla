@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Tesla Authentication API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Authentication",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Tesla Get an Access Token",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://owner-api.teslamotors.com/oauth/token",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Performs the login. Takes in an plain text email and password, matching the owner's login information for [https://my.teslamotors.com/user/login](https://my.teslamotors.com/user/login).\nReturns a `access_token` which is passed along as a header with all future requests to authenticate the user.\nYou must provide the `Authorization: Bearer {access_token}` header in all other requests.\nThe current client ID and secret are [available here](http://pastebin.com/YiLPDggh)"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

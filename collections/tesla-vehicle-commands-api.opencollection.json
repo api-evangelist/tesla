@@ -1,0 +1,981 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Tesla Authentication Vehicle Commands API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Vehicle Commands",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Tesla Wake Up Car",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/wake_up",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ]
+          },
+          "docs": "Wakes up the car from the sleep state. Necessary to get some data from the car."
+        },
+        {
+          "info": {
+            "name": "Tesla Wake Up Car",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/command/wake_up",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ]
+          },
+          "docs": "Wakes up the car from the sleep state. Necessary to get some data from the car."
+        },
+        {
+          "info": {
+            "name": "Tesla Set Valet Mode",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/command/set_valet_mode",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Sets valet mode on or off with a PIN to disable it from within the car. Reuses last PIN from previous valet session.\nValet Mode limits the car's top speed to 70MPH and 80kW of acceleration power. It also disables Homelink, Bluetooth and\nWifi settings, and the ability to disable mobile access to the car. It also hides your favorites, home, and work\nlocations in navigation."
+        },
+        {
+          "info": {
+            "name": "Tesla Reset Valet PIN",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/command/reset_valet_pin",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ]
+          },
+          "docs": "Resets the PIN set for valet mode, if set."
+        },
+        {
+          "info": {
+            "name": "Tesla Open Charge Port",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/command/charge_port_door_open",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ]
+          },
+          "docs": "Opens and unlocks the charge port."
+        },
+        {
+          "info": {
+            "name": "Tesla Close Charge Port",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/command/charge_port_door_close",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ]
+          },
+          "docs": "Closes the charge port."
+        },
+        {
+          "info": {
+            "name": "Tesla Set Charge Limit to Standard",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/command/charge_standard",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ]
+          },
+          "docs": "Set the charge mode to standard (90% under the new percentage system introduced in 4.5)."
+        },
+        {
+          "info": {
+            "name": "Tesla Set Charge Limit to Max Range",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/command/charge_max_range",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ]
+          },
+          "docs": "Set the charge mode to max range (100% under the new percentage system introduced in 4.5). Use sparingly!"
+        },
+        {
+          "info": {
+            "name": "Tesla Set Charge Limit",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/command/set_charge_limit",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Set the charge limit to a custom percentage."
+        },
+        {
+          "info": {
+            "name": "Tesla Set Charge Current",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/command/set_charging_amps",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Set the maximum Charge Current in Amps"
+        },
+        {
+          "info": {
+            "name": "Tesla Set Scheduled Departure",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/command/set_scheduled_departure",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Set Scheduled Departure settings"
+        },
+        {
+          "info": {
+            "name": "Tesla Set Scheduled Charging",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/command/set_scheduled_charging",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Set Scheduled Charging settings"
+        },
+        {
+          "info": {
+            "name": "Tesla Start Charging",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/command/charge_start",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ]
+          },
+          "docs": "Start charging. Must be plugged in, have power available, and not have reached your charge limit."
+        },
+        {
+          "info": {
+            "name": "Tesla Stop Charging",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/command/charge_stop",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ]
+          },
+          "docs": "Stop charging. Must already be charging."
+        },
+        {
+          "info": {
+            "name": "Tesla Flash Lights",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/command/flash_lights",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ]
+          },
+          "docs": "Flash the lights once."
+        },
+        {
+          "info": {
+            "name": "Tesla Honk Horn",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/command/honk_horn",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ]
+          },
+          "docs": "Honk the horn once."
+        },
+        {
+          "info": {
+            "name": "Tesla Unlock Doors",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/command/door_unlock",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ]
+          },
+          "docs": "Unlock the car's doors."
+        },
+        {
+          "info": {
+            "name": "Tesla Lock Doors",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/command/door_lock",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ]
+          },
+          "docs": "Lock the car's doors."
+        },
+        {
+          "info": {
+            "name": "Tesla Set Temperature",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/command/set_temps",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Set the temperature target for the HVAC system."
+        },
+        {
+          "info": {
+            "name": "Tesla Start HVAC System",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/command/auto_conditioning_start",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ]
+          },
+          "docs": "Start the climate control system. Will cool or heat automatically, depending on set temperature."
+        },
+        {
+          "info": {
+            "name": "Tesla Stop HVAC System",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/command/auto_conditioning_stop",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ]
+          },
+          "docs": "Stop the climate control system."
+        },
+        {
+          "info": {
+            "name": "Tesla Toggle Bioweapon Defense Mode",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/command/set_bioweapon_mode",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Enable or Disable Bioweapon Defense Mode on equipped vehicles."
+        },
+        {
+          "info": {
+            "name": "Tesla Set the Climate Keeper mode",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/command/set_climate_keeper_mode",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Set the Climate Keeper mode."
+        },
+        {
+          "info": {
+            "name": "Tesla Enable or Disable Cabin Overheat Protection",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/command/set_cabin_overheat_protection",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Enable or Disable Cabin Overheat Protection"
+        },
+        {
+          "info": {
+            "name": "Tesla Set Seat Heater Level",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/command/remote_seat_heater_request",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Set the heating level of a seat heater"
+        },
+        {
+          "info": {
+            "name": "Tesla Set Seat Cooler Level",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/command/remote_seat_cooler_request",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Set the cooling level of a seat heater"
+        },
+        {
+          "info": {
+            "name": "Tesla Toggle Automatic Seat Heater/Cooler",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/command/remote_auto_seat_climate_request",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Enables or disables automatic control of a seat heater/coooler"
+        },
+        {
+          "info": {
+            "name": "Tesla Toggle Steering Wheel Heater",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/command/remote_steering_wheel_heater_request",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Toggle the steering wheel heater"
+        },
+        {
+          "info": {
+            "name": "Tesla Move Pano Roof",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/command/sun_roof_control",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Controls the car's panoramic roof, if installed."
+        },
+        {
+          "info": {
+            "name": "Tesla Remote Start",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/command/remote_start_drive",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Start the car for keyless driving. Must start driving within 2 minutes of issuing this request."
+        },
+        {
+          "info": {
+            "name": "Tesla Open Trunk/Frunk",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/command/actuate_trunk",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Open the trunk or frunk. Currently inoperable."
+        },
+        {
+          "info": {
+            "name": "Tesla Activate Speed Limit",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/command/speed_limit_activate",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Activates Speed Limit"
+        },
+        {
+          "info": {
+            "name": "Tesla Deactivate Speed Limit",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/command/speed_limit_deactivate",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Deactivates Speed Limit"
+        },
+        {
+          "info": {
+            "name": "Tesla Set Speed Limit",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/command/speed_limit_set_limit",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Sets Speed Limit"
+        },
+        {
+          "info": {
+            "name": "Tesla Clear Speed Limit Pin",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/command/speed_limit_clear_pin",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Clears Speed Limit Pin"
+        },
+        {
+          "info": {
+            "name": "Tesla Send Navigation Request",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/command/navigation_request",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Sends Navigation Request to Vehicle"
+        },
+        {
+          "info": {
+            "name": "Tesla Share data to Vehicle",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/command/share",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Sends Data to Vehicle (v10 only)"
+        },
+        {
+          "info": {
+            "name": "Tesla Start Software Update",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/command/schedule_software_update",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ]
+          },
+          "docs": "Start Software Update"
+        },
+        {
+          "info": {
+            "name": "Tesla Cancel Software Update",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/command/cancel_software_update",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ]
+          },
+          "docs": "Cancel Software Update"
+        },
+        {
+          "info": {
+            "name": "Tesla Toggle Sentry Mode",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/command/set_sentry_mode",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Toggle Sentry Mode"
+        },
+        {
+          "info": {
+            "name": "Tesla Set Max Defrost",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/command/set_preconditioning_max",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Set Max Defrost"
+        },
+        {
+          "info": {
+            "name": "Tesla Window Control",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/command/window_control",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Window Control"
+        },
+        {
+          "info": {
+            "name": "Tesla Trigger Homelink",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/command/trigger_homelink",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Trigger Homelink"
+        },
+        {
+          "info": {
+            "name": "Tesla Set Vehicle Name",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/command/set_vehicle_name",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Set Vehicle Name"
+        },
+        {
+          "info": {
+            "name": "Tesla Remote Boombox",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/command/remote_boombox",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ]
+          },
+          "docs": "Remote Boombox"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

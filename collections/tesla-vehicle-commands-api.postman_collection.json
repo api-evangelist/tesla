@@ -1,0 +1,4872 @@
+{
+  "item": [
+    {
+      "id": "a702269e-22bb-491c-890f-5ad322d4bfb0",
+      "name": "Vehicle Commands",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a34d166b-1302-40a8-9b2b-3852b4abcda8",
+          "name": "Tesla Wake Up Car",
+          "request": {
+            "name": "Tesla Wake Up Car",
+            "description": {
+              "content": "Wakes up the car from the sleep state. Necessary to get some data from the car.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "vehicles",
+                ":vehicle_id",
+                "wake_up"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vehicle_id",
+                  "description": "(Required) The id of the Vehicle."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "26f296e4-bb8a-4928-aa44-d6f5c1fd331f",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "vehicles",
+                    ":vehicle_id",
+                    "wake_up"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vehicle_id",
+                      "description": "(Required) The id of the Vehicle."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"id\": \"string\",\n    \"user_id\": 5513.766204679623,\n    \"vehicle_id\": 8974.70577076203,\n    \"vin\": \"string\",\n    \"display_name\": \"string\",\n    \"option_codes\": \"string\",\n    \"color\": \"string\",\n    \"tokens\": [\n      \"string\",\n      \"string\"\n    ],\n    \"state\": \"string\",\n    \"in_service\": true,\n    \"id_s\": \"string\",\n    \"calendar_enabled\": true,\n    \"api_version\": \"string\",\n    \"backseat_token\": \"string\",\n    \"backseat_token_updated_at\": 2499.6407959703283\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "78667f14-1e60-48d3-b491-6b8ef126d381",
+          "name": "Tesla Wake Up Car",
+          "request": {
+            "name": "Tesla Wake Up Car",
+            "description": {
+              "content": "Wakes up the car from the sleep state. Necessary to get some data from the car.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "vehicles",
+                ":vehicle_id",
+                "command",
+                "wake_up"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vehicle_id",
+                  "description": "(Required) The id of the Vehicle."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1703edc1-d514-47a2-a4fc-1dac58c46f11",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "vehicles",
+                    ":vehicle_id",
+                    "command",
+                    "wake_up"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vehicle_id",
+                      "description": "(Required) The id of the Vehicle."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"result\": true,\n    \"reason\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cd55c5db-ae12-4270-aa3f-acaf94984b55",
+          "name": "Tesla Set Valet Mode",
+          "request": {
+            "name": "Tesla Set Valet Mode",
+            "description": {
+              "content": "Sets valet mode on or off with a PIN to disable it from within the car. Reuses last PIN from previous valet session.\nValet Mode limits the car's top speed to 70MPH and 80kW of acceleration power. It also disables Homelink, Bluetooth and\nWifi settings, and the ability to disable mobile access to the car. It also hides your favorites, home, and work\nlocations in navigation.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "vehicles",
+                ":vehicle_id",
+                "command",
+                "set_valet_mode"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vehicle_id",
+                  "description": "(Required) The id of the Vehicle."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"on\": \"<boolean>\",\n  \"password\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6184f1de-ef50-4802-a4ac-3a916c9185c8",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "vehicles",
+                    ":vehicle_id",
+                    "command",
+                    "set_valet_mode"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vehicle_id",
+                      "description": "(Required) The id of the Vehicle."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"on\": \"<boolean>\",\n  \"password\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"result\": true,\n    \"reason\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "645e1b05-9c49-4b2f-ba3c-4560156b3ec2",
+          "name": "Tesla Reset Valet PIN",
+          "request": {
+            "name": "Tesla Reset Valet PIN",
+            "description": {
+              "content": "Resets the PIN set for valet mode, if set.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "vehicles",
+                ":vehicle_id",
+                "command",
+                "reset_valet_pin"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vehicle_id",
+                  "description": "(Required) The id of the Vehicle."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f6aba6a1-2474-46e8-b551-688bda6abb18",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "vehicles",
+                    ":vehicle_id",
+                    "command",
+                    "reset_valet_pin"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vehicle_id",
+                      "description": "(Required) The id of the Vehicle."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"result\": true,\n    \"reason\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d06210e6-e90b-4274-9e2b-b9ce5ee2ccc3",
+          "name": "Tesla Open Charge Port",
+          "request": {
+            "name": "Tesla Open Charge Port",
+            "description": {
+              "content": "Opens and unlocks the charge port.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "vehicles",
+                ":vehicle_id",
+                "command",
+                "charge_port_door_open"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vehicle_id",
+                  "description": "(Required) The id of the Vehicle."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5f86713d-7d28-4f8c-88ff-896a64950df5",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "vehicles",
+                    ":vehicle_id",
+                    "command",
+                    "charge_port_door_open"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vehicle_id",
+                      "description": "(Required) The id of the Vehicle."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"result\": true,\n    \"reason\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b15ae7e0-a8a4-42e5-be10-912fbbee08d1",
+          "name": "Tesla Close Charge Port",
+          "request": {
+            "name": "Tesla Close Charge Port",
+            "description": {
+              "content": "Closes the charge port.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "vehicles",
+                ":vehicle_id",
+                "command",
+                "charge_port_door_close"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vehicle_id",
+                  "description": "(Required) The id of the Vehicle."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7b4d2881-71cb-4bc8-86ee-d1490ed76e64",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "vehicles",
+                    ":vehicle_id",
+                    "command",
+                    "charge_port_door_close"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vehicle_id",
+                      "description": "(Required) The id of the Vehicle."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"result\": true,\n    \"reason\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5eaec330-747e-453b-938d-1e07153dfd81",
+          "name": "Tesla Set Charge Limit to Standard",
+          "request": {
+            "name": "Tesla Set Charge Limit to Standard",
+            "description": {
+              "content": "Set the charge mode to standard (90% under the new percentage system introduced in 4.5).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "vehicles",
+                ":vehicle_id",
+                "command",
+                "charge_standard"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vehicle_id",
+                  "description": "(Required) The id of the Vehicle."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2c9c1eca-34f9-45de-bd39-471e000d6eea",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "vehicles",
+                    ":vehicle_id",
+                    "command",
+                    "charge_standard"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vehicle_id",
+                      "description": "(Required) The id of the Vehicle."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"result\": true,\n    \"reason\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8dcd9943-6cd8-41b8-8de1-55ae9f05c84c",
+          "name": "Tesla Set Charge Limit to Max Range",
+          "request": {
+            "name": "Tesla Set Charge Limit to Max Range",
+            "description": {
+              "content": "Set the charge mode to max range (100% under the new percentage system introduced in 4.5). Use sparingly!",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "vehicles",
+                ":vehicle_id",
+                "command",
+                "charge_max_range"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vehicle_id",
+                  "description": "(Required) The id of the Vehicle."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8b74c920-9d49-4ba4-9a7e-4ce8b9626edc",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "vehicles",
+                    ":vehicle_id",
+                    "command",
+                    "charge_max_range"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vehicle_id",
+                      "description": "(Required) The id of the Vehicle."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"result\": true,\n    \"reason\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "27675cff-f943-4f96-a4ce-dd0be9424fdf",
+          "name": "Tesla Set Charge Limit",
+          "request": {
+            "name": "Tesla Set Charge Limit",
+            "description": {
+              "content": "Set the charge limit to a custom percentage.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "vehicles",
+                ":vehicle_id",
+                "command",
+                "set_charge_limit"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vehicle_id",
+                  "description": "(Required) The id of the Vehicle."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"percent\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0f14e53a-d1f6-4a84-83b3-77ca69d3e4eb",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "vehicles",
+                    ":vehicle_id",
+                    "command",
+                    "set_charge_limit"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vehicle_id",
+                      "description": "(Required) The id of the Vehicle."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"percent\": 80\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"result\": true,\n    \"reason\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "803570b7-6a8e-4417-8691-7c5ff958dc35",
+          "name": "Tesla Set Charge Current",
+          "request": {
+            "name": "Tesla Set Charge Current",
+            "description": {
+              "content": "Set the maximum Charge Current in Amps",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "vehicles",
+                ":vehicle_id",
+                "command",
+                "set_charging_amps"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vehicle_id",
+                  "description": "(Required) The id of the Vehicle."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"charging_amps\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a40e74c2-5a04-4092-97d9-d498c187a50f",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "vehicles",
+                    ":vehicle_id",
+                    "command",
+                    "set_charging_amps"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vehicle_id",
+                      "description": "(Required) The id of the Vehicle."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"charging_amps\": 40\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"result\": true,\n    \"reason\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1455c791-70dc-4040-b7c3-84f37195be42",
+          "name": "Tesla Set Scheduled Departure",
+          "request": {
+            "name": "Tesla Set Scheduled Departure",
+            "description": {
+              "content": "Set Scheduled Departure settings",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "vehicles",
+                ":vehicle_id",
+                "command",
+                "set_scheduled_departure"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vehicle_id",
+                  "description": "(Required) The id of the Vehicle."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"departure_time\": \"<integer>\",\n  \"enable\": \"<boolean>\",\n  \"preconditioning_enabled\": \"<boolean>\",\n  \"preconditioning_weekdays_only\": \"<boolean>\",\n  \"off_peak_charging_enabled\": \"<boolean>\",\n  \"off_peak_charging_weekdays_only\": \"<boolean>\",\n  \"end_off_peak_time\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3e11086a-c298-48c6-9118-e933f62f3ca4",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "vehicles",
+                    ":vehicle_id",
+                    "command",
+                    "set_scheduled_departure"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vehicle_id",
+                      "description": "(Required) The id of the Vehicle."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"departure_time\": 180,\n  \"enable\": true,\n  \"preconditioning_enabled\": true,\n  \"preconditioning_weekdays_only\": true,\n  \"off_peak_charging_enabled\": false,\n  \"off_peak_charging_weekdays_only\": false,\n  \"end_off_peak_time\": 60\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"result\": true,\n    \"reason\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9220d3f0-74cc-4ae6-a083-2d08d9886756",
+          "name": "Tesla Set Scheduled Charging",
+          "request": {
+            "name": "Tesla Set Scheduled Charging",
+            "description": {
+              "content": "Set Scheduled Charging settings",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "vehicles",
+                ":vehicle_id",
+                "command",
+                "set_scheduled_charging"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vehicle_id",
+                  "description": "(Required) The id of the Vehicle."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"time\": \"<integer>\",\n  \"enable\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ecf847df-26b5-42e8-8bd3-c264e5602e1f",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "vehicles",
+                    ":vehicle_id",
+                    "command",
+                    "set_scheduled_charging"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vehicle_id",
+                      "description": "(Required) The id of the Vehicle."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"time\": 60,\n  \"enable\": true\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"result\": true,\n    \"reason\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5f023299-95a2-4c94-965d-3b9e3444acf4",
+          "name": "Tesla Start Charging",
+          "request": {
+            "name": "Tesla Start Charging",
+            "description": {
+              "content": "Start charging. Must be plugged in, have power available, and not have reached your charge limit.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "vehicles",
+                ":vehicle_id",
+                "command",
+                "charge_start"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vehicle_id",
+                  "description": "(Required) The id of the Vehicle."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3054838e-471f-4c9d-9c1f-be7a29684cd2",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "vehicles",
+                    ":vehicle_id",
+                    "command",
+                    "charge_start"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vehicle_id",
+                      "description": "(Required) The id of the Vehicle."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"result\": true,\n    \"reason\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d6ccf707-3dff-46e8-bb5a-11e806d4fcb0",
+          "name": "Tesla Stop Charging",
+          "request": {
+            "name": "Tesla Stop Charging",
+            "description": {
+              "content": "Stop charging. Must already be charging.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "vehicles",
+                ":vehicle_id",
+                "command",
+                "charge_stop"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vehicle_id",
+                  "description": "(Required) The id of the Vehicle."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "843b1030-d7bc-49cc-a15e-17fcb6ab7b95",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "vehicles",
+                    ":vehicle_id",
+                    "command",
+                    "charge_stop"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vehicle_id",
+                      "description": "(Required) The id of the Vehicle."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"result\": true,\n    \"reason\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f5931bc8-dac0-479d-a01f-e0a276b57f9d",
+          "name": "Tesla Flash Lights",
+          "request": {
+            "name": "Tesla Flash Lights",
+            "description": {
+              "content": "Flash the lights once.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "vehicles",
+                ":vehicle_id",
+                "command",
+                "flash_lights"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vehicle_id",
+                  "description": "(Required) The id of the Vehicle."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6ce190f3-da8e-4392-a23e-5215cdf306b3",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "vehicles",
+                    ":vehicle_id",
+                    "command",
+                    "flash_lights"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vehicle_id",
+                      "description": "(Required) The id of the Vehicle."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"result\": true,\n    \"reason\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8cd7cb6f-1866-4a99-a9ca-d36a4a9aaf16",
+          "name": "Tesla Honk Horn",
+          "request": {
+            "name": "Tesla Honk Horn",
+            "description": {
+              "content": "Honk the horn once.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "vehicles",
+                ":vehicle_id",
+                "command",
+                "honk_horn"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vehicle_id",
+                  "description": "(Required) The id of the Vehicle."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "00361ba4-8258-4084-85e5-5ab080181f49",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "vehicles",
+                    ":vehicle_id",
+                    "command",
+                    "honk_horn"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vehicle_id",
+                      "description": "(Required) The id of the Vehicle."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"result\": true,\n    \"reason\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f66e0519-ae66-4cd7-8ed1-eb6d50032a96",
+          "name": "Tesla Unlock Doors",
+          "request": {
+            "name": "Tesla Unlock Doors",
+            "description": {
+              "content": "Unlock the car's doors.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "vehicles",
+                ":vehicle_id",
+                "command",
+                "door_unlock"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vehicle_id",
+                  "description": "(Required) The id of the Vehicle."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "89b04868-f597-4a9c-bb52-c3b0c1492f31",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "vehicles",
+                    ":vehicle_id",
+                    "command",
+                    "door_unlock"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vehicle_id",
+                      "description": "(Required) The id of the Vehicle."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"result\": true,\n    \"reason\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a09551b5-3287-44ab-8426-3e34df783661",
+          "name": "Tesla Lock Doors",
+          "request": {
+            "name": "Tesla Lock Doors",
+            "description": {
+              "content": "Lock the car's doors.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "vehicles",
+                ":vehicle_id",
+                "command",
+                "door_lock"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vehicle_id",
+                  "description": "(Required) The id of the Vehicle."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b83e15ed-2c1e-4074-abff-c56c46ec7e1c",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "vehicles",
+                    ":vehicle_id",
+                    "command",
+                    "door_lock"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vehicle_id",
+                      "description": "(Required) The id of the Vehicle."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"result\": true,\n    \"reason\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cfb5b679-2863-4ab5-96ba-b5bc7ce62cc6",
+          "name": "Tesla Set Temperature",
+          "request": {
+            "name": "Tesla Set Temperature",
+            "description": {
+              "content": "Set the temperature target for the HVAC system.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "vehicles",
+                ":vehicle_id",
+                "command",
+                "set_temps"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vehicle_id",
+                  "description": "(Required) The id of the Vehicle."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"driver_temp\": \"<double>\",\n  \"passenger_temp\": \"<double>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c2da23c4-84c4-4950-a0af-a040f800e63d",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "vehicles",
+                    ":vehicle_id",
+                    "command",
+                    "set_temps"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vehicle_id",
+                      "description": "(Required) The id of the Vehicle."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"driver_temp\": 70,\n  \"passenger_temp\": 72\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"result\": true,\n    \"reason\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4ed0d21c-f316-4c74-bb70-db0e4f9ba96c",
+          "name": "Tesla Start HVAC System",
+          "request": {
+            "name": "Tesla Start HVAC System",
+            "description": {
+              "content": "Start the climate control system. Will cool or heat automatically, depending on set temperature.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "vehicles",
+                ":vehicle_id",
+                "command",
+                "auto_conditioning_start"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vehicle_id",
+                  "description": "(Required) The id of the Vehicle."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8f6afdfa-952b-4121-bbc0-803ca9ed680a",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "vehicles",
+                    ":vehicle_id",
+                    "command",
+                    "auto_conditioning_start"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vehicle_id",
+                      "description": "(Required) The id of the Vehicle."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"result\": true,\n    \"reason\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3703a90d-f578-48b2-9d4d-dc5ebdcb967b",
+          "name": "Tesla Stop HVAC System",
+          "request": {
+            "name": "Tesla Stop HVAC System",
+            "description": {
+              "content": "Stop the climate control system.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "vehicles",
+                ":vehicle_id",
+                "command",
+                "auto_conditioning_stop"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vehicle_id",
+                  "description": "(Required) The id of the Vehicle."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9fc7efdf-1678-4a72-aecd-d6258ed358a9",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "vehicles",
+                    ":vehicle_id",
+                    "command",
+                    "auto_conditioning_stop"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vehicle_id",
+                      "description": "(Required) The id of the Vehicle."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"result\": true,\n    \"reason\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "85474a82-fae3-4811-ac06-398e89458871",
+          "name": "Tesla Toggle Bioweapon Defense Mode",
+          "request": {
+            "name": "Tesla Toggle Bioweapon Defense Mode",
+            "description": {
+              "content": "Enable or Disable Bioweapon Defense Mode on equipped vehicles.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "vehicles",
+                ":vehicle_id",
+                "command",
+                "set_bioweapon_mode"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vehicle_id",
+                  "description": "(Required) The id of the Vehicle."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"on\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c5063c15-d97b-4da9-885b-8a4dd7756c83",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "vehicles",
+                    ":vehicle_id",
+                    "command",
+                    "set_bioweapon_mode"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vehicle_id",
+                      "description": "(Required) The id of the Vehicle."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"on\": true\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"result\": true,\n    \"reason\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0d06b11c-6e56-42bb-a0d0-440928e289b7",
+          "name": "Tesla Set the Climate Keeper mode",
+          "request": {
+            "name": "Tesla Set the Climate Keeper mode",
+            "description": {
+              "content": "Set the Climate Keeper mode.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "vehicles",
+                ":vehicle_id",
+                "command",
+                "set_climate_keeper_mode"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vehicle_id",
+                  "description": "(Required) The id of the Vehicle."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"climate_keeper_mode\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0321c2e8-9509-41b9-8d94-b69c536079d4",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "vehicles",
+                    ":vehicle_id",
+                    "command",
+                    "set_climate_keeper_mode"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vehicle_id",
+                      "description": "(Required) The id of the Vehicle."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"climate_keeper_mode\": 1\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"result\": true,\n    \"reason\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "39bfd6ed-65d7-4072-9495-8129a4475fe7",
+          "name": "Tesla Enable or Disable Cabin Overheat Protection",
+          "request": {
+            "name": "Tesla Enable or Disable Cabin Overheat Protection",
+            "description": {
+              "content": "Enable or Disable Cabin Overheat Protection",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "vehicles",
+                ":vehicle_id",
+                "command",
+                "set_cabin_overheat_protection"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vehicle_id",
+                  "description": "(Required) The id of the Vehicle."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"on\": \"<boolean>\",\n  \"fan_only\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f8f92952-cc1e-4fc0-acc7-94d1c82aca77",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "vehicles",
+                    ":vehicle_id",
+                    "command",
+                    "set_cabin_overheat_protection"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vehicle_id",
+                      "description": "(Required) The id of the Vehicle."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"on\": true,\n  \"fan_only\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"result\": true,\n    \"reason\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ced7de9c-2a0a-4339-bb13-a545999a49bf",
+          "name": "Tesla Set Seat Heater Level",
+          "request": {
+            "name": "Tesla Set Seat Heater Level",
+            "description": {
+              "content": "Set the heating level of a seat heater",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "vehicles",
+                ":vehicle_id",
+                "command",
+                "remote_seat_heater_request"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vehicle_id",
+                  "description": "(Required) The id of the Vehicle."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"heater\": \"<integer>\",\n  \"level\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5a8d2dc4-6e79-4df5-8691-aa6b6ce3dfea",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "vehicles",
+                    ":vehicle_id",
+                    "command",
+                    "remote_seat_heater_request"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vehicle_id",
+                      "description": "(Required) The id of the Vehicle."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"heater\": 0,\n  \"level\": 2\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"result\": true,\n    \"reason\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "68b13199-2926-4c5c-8305-573baaad0051",
+          "name": "Tesla Set Seat Cooler Level",
+          "request": {
+            "name": "Tesla Set Seat Cooler Level",
+            "description": {
+              "content": "Set the cooling level of a seat heater",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "vehicles",
+                ":vehicle_id",
+                "command",
+                "remote_seat_cooler_request"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vehicle_id",
+                  "description": "(Required) The id of the Vehicle."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"seat_position\": \"<integer>\",\n  \"seat_cooler_level\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c0c7dff1-d8a9-4cce-94d4-72936736e07b",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "vehicles",
+                    ":vehicle_id",
+                    "command",
+                    "remote_seat_cooler_request"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vehicle_id",
+                      "description": "(Required) The id of the Vehicle."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"seat_position\": 0,\n  \"seat_cooler_level\": 2\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"result\": true,\n    \"reason\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4f5664ea-2d3c-4103-ba10-9df35f93b568",
+          "name": "Tesla Toggle Automatic Seat Heater/Cooler",
+          "request": {
+            "name": "Tesla Toggle Automatic Seat Heater/Cooler",
+            "description": {
+              "content": "Enables or disables automatic control of a seat heater/coooler",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "vehicles",
+                ":vehicle_id",
+                "command",
+                "remote_auto_seat_climate_request"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vehicle_id",
+                  "description": "(Required) The id of the Vehicle."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"auto_seat_position\": \"<integer>\",\n  \"auto_climate_on\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "30f465df-e815-4b17-87be-29dc9ac9ddc6",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "vehicles",
+                    ":vehicle_id",
+                    "command",
+                    "remote_auto_seat_climate_request"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vehicle_id",
+                      "description": "(Required) The id of the Vehicle."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"auto_seat_position\": 0,\n  \"auto_climate_on\": true\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"result\": true,\n    \"reason\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6bac85bf-6289-4583-9e00-59af7701473f",
+          "name": "Tesla Toggle Steering Wheel Heater",
+          "request": {
+            "name": "Tesla Toggle Steering Wheel Heater",
+            "description": {
+              "content": "Toggle the steering wheel heater",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "vehicles",
+                ":vehicle_id",
+                "command",
+                "remote_steering_wheel_heater_request"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vehicle_id",
+                  "description": "(Required) The id of the Vehicle."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"on\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "780114f9-ac3d-4d51-95a5-6c9959fc4a1a",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "vehicles",
+                    ":vehicle_id",
+                    "command",
+                    "remote_steering_wheel_heater_request"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vehicle_id",
+                      "description": "(Required) The id of the Vehicle."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"on\": true\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"result\": true,\n    \"reason\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8b0b1741-520d-441a-bb13-b0ee2e3d2822",
+          "name": "Tesla Move Pano Roof",
+          "request": {
+            "name": "Tesla Move Pano Roof",
+            "description": {
+              "content": "Controls the car's panoramic roof, if installed.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "vehicles",
+                ":vehicle_id",
+                "command",
+                "sun_roof_control"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vehicle_id",
+                  "description": "(Required) The id of the Vehicle."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"state\": \"<string>\",\n  \"percent\": \"<double>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2098b208-823f-4022-9985-167b254317fa",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "vehicles",
+                    ":vehicle_id",
+                    "command",
+                    "sun_roof_control"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vehicle_id",
+                      "description": "(Required) The id of the Vehicle."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"state\": \"vent\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"result\": true,\n    \"reason\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2bbfb6dd-6456-4389-bbe7-431edf157890",
+          "name": "Tesla Remote Start",
+          "request": {
+            "name": "Tesla Remote Start",
+            "description": {
+              "content": "Start the car for keyless driving. Must start driving within 2 minutes of issuing this request.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "vehicles",
+                ":vehicle_id",
+                "command",
+                "remote_start_drive"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vehicle_id",
+                  "description": "(Required) The id of the Vehicle."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"password\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "04cc9fc6-304d-4c74-b907-7512d3e3bc4e",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "vehicles",
+                    ":vehicle_id",
+                    "command",
+                    "remote_start_drive"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vehicle_id",
+                      "description": "(Required) The id of the Vehicle."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"password\": \"hunter2\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"result\": true,\n    \"reason\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5570d19a-b64b-4f89-a9e6-364ae65dd0b2",
+          "name": "Tesla Open Trunk/Frunk",
+          "request": {
+            "name": "Tesla Open Trunk/Frunk",
+            "description": {
+              "content": "Open the trunk or frunk. Currently inoperable.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "vehicles",
+                ":vehicle_id",
+                "command",
+                "actuate_trunk"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vehicle_id",
+                  "description": "(Required) The id of the Vehicle."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"which_trunk\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e8a975cf-9069-48b2-91b3-e0abc832659d",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "vehicles",
+                    ":vehicle_id",
+                    "command",
+                    "actuate_trunk"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vehicle_id",
+                      "description": "(Required) The id of the Vehicle."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"which_trunk\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"result\": true,\n    \"reason\": \"\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c3489cb7-c373-4162-97b6-5e0dfdd27b84",
+          "name": "Tesla Activate Speed Limit",
+          "request": {
+            "name": "Tesla Activate Speed Limit",
+            "description": {
+              "content": "Activates Speed Limit",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "vehicles",
+                ":vehicle_id",
+                "command",
+                "speed_limit_activate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vehicle_id",
+                  "description": "(Required) The id of the Vehicle."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"pin\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "65487bad-3712-44f9-9d40-3f29b3d01b38",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "vehicles",
+                    ":vehicle_id",
+                    "command",
+                    "speed_limit_activate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vehicle_id",
+                      "description": "(Required) The id of the Vehicle."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"pin\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"result\": true,\n    \"reason\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "53309556-1aa1-4a5f-88b0-4d4eaea7ee64",
+          "name": "Tesla Deactivate Speed Limit",
+          "request": {
+            "name": "Tesla Deactivate Speed Limit",
+            "description": {
+              "content": "Deactivates Speed Limit",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "vehicles",
+                ":vehicle_id",
+                "command",
+                "speed_limit_deactivate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vehicle_id",
+                  "description": "(Required) The id of the Vehicle."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"pin\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c2263623-fc37-438b-ab42-3276204c0d51",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "vehicles",
+                    ":vehicle_id",
+                    "command",
+                    "speed_limit_deactivate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vehicle_id",
+                      "description": "(Required) The id of the Vehicle."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"pin\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"result\": true,\n    \"reason\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8fc4d676-bd53-4e87-96ce-977d2d5dd52a",
+          "name": "Tesla Set Speed Limit",
+          "request": {
+            "name": "Tesla Set Speed Limit",
+            "description": {
+              "content": "Sets Speed Limit",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "vehicles",
+                ":vehicle_id",
+                "command",
+                "speed_limit_set_limit"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vehicle_id",
+                  "description": "(Required) The id of the Vehicle."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"limit_mph\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "516da2c6-0870-40c3-aa38-39e96eddda60",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "vehicles",
+                    ":vehicle_id",
+                    "command",
+                    "speed_limit_set_limit"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vehicle_id",
+                      "description": "(Required) The id of the Vehicle."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"limit_mph\": 75\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"result\": true,\n    \"reason\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "48a05ed4-d203-4549-bd31-971be8c32d6e",
+          "name": "Tesla Clear Speed Limit Pin",
+          "request": {
+            "name": "Tesla Clear Speed Limit Pin",
+            "description": {
+              "content": "Clears Speed Limit Pin",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "vehicles",
+                ":vehicle_id",
+                "command",
+                "speed_limit_clear_pin"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vehicle_id",
+                  "description": "(Required) The id of the Vehicle."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"pin\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9760111a-5f35-45f3-9bbe-1c9f3fe895ca",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "vehicles",
+                    ":vehicle_id",
+                    "command",
+                    "speed_limit_clear_pin"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vehicle_id",
+                      "description": "(Required) The id of the Vehicle."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"pin\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"result\": true,\n    \"reason\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "41b6bac0-0b59-44b0-a8c9-276a440c9297",
+          "name": "Tesla Send Navigation Request",
+          "request": {
+            "name": "Tesla Send Navigation Request",
+            "description": {
+              "content": "Sends Navigation Request to Vehicle",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "vehicles",
+                ":vehicle_id",
+                "command",
+                "navigation_request"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vehicle_id",
+                  "description": "(Required) The id of the Vehicle."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"type\": \"share_ext_content_raw\",\n  \"value\": {\n    \"android.intent.extra.TEXT\": \"<string>\"\n  },\n  \"locale\": \"en-us\",\n  \"timestamp_ms\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "329db178-3076-49e0-8d88-858f2d95424e",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "vehicles",
+                    ":vehicle_id",
+                    "command",
+                    "navigation_request"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vehicle_id",
+                      "description": "(Required) The id of the Vehicle."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"type\": \"share_ext_content_raw\",\n  \"value\": {\n    \"android.intent.extra.TEXT\": \"45500 Fremont Blvd, Fremont, CA 94538\\n\\nhttps://goo.gl/maps/X\"\n  },\n  \"locale\": \"en-us\",\n  \"timestamp_ms\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"result\": true,\n    \"reason\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "307183d2-c0dc-4336-aabd-38b3fd44e7bf",
+          "name": "Tesla Share data to Vehicle",
+          "request": {
+            "name": "Tesla Share data to Vehicle",
+            "description": {
+              "content": "Sends Data to Vehicle (v10 only)",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "vehicles",
+                ":vehicle_id",
+                "command",
+                "share"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vehicle_id",
+                  "description": "(Required) The id of the Vehicle."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"type\": \"share_ext_content_raw\",\n  \"value\": {\n    \"android.intent.extra.TEXT\": \"<string>\",\n    \"lat\": \"<double>\",\n    \"long\": \"<double>\"\n  },\n  \"locale\": \"<string>\",\n  \"timestamp\": \"<number>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "04a3e60f-22b8-4515-ae13-b364ddf59f3e",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "vehicles",
+                    ":vehicle_id",
+                    "command",
+                    "share"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vehicle_id",
+                      "description": "(Required) The id of the Vehicle."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"type\": \"share_ext_content_raw\",\n  \"value\": {\n    \"android.intent.extra.TEXT\": \"45500 Fremont Blvd, Fremont, CA 94538\\n\\nhttps://goo.gl/maps/X\",\n    \"lat\": 123.456,\n    \"long\": -123.456\n  },\n  \"locale\": \"en-US\",\n  \"timestamp\": 1574041714569\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"result\": true,\n    \"reason\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "87522b49-58a8-40ef-8616-50f9298f2bf7",
+          "name": "Tesla Start Software Update",
+          "request": {
+            "name": "Tesla Start Software Update",
+            "description": {
+              "content": "Start Software Update",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "vehicles",
+                ":vehicle_id",
+                "command",
+                "schedule_software_update"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vehicle_id",
+                  "description": "(Required) The id of the Vehicle."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5b108230-237c-4889-a2c7-82489b4eba83",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "vehicles",
+                    ":vehicle_id",
+                    "command",
+                    "schedule_software_update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vehicle_id",
+                      "description": "(Required) The id of the Vehicle."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"result\": true,\n    \"reason\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "af6654af-7bcf-4fe6-87f0-d797ed3558d3",
+          "name": "Tesla Cancel Software Update",
+          "request": {
+            "name": "Tesla Cancel Software Update",
+            "description": {
+              "content": "Cancel Software Update",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "vehicles",
+                ":vehicle_id",
+                "command",
+                "cancel_software_update"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vehicle_id",
+                  "description": "(Required) The id of the Vehicle."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b2e065fd-415c-408e-94e4-825dfd58149a",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "vehicles",
+                    ":vehicle_id",
+                    "command",
+                    "cancel_software_update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vehicle_id",
+                      "description": "(Required) The id of the Vehicle."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"result\": true,\n    \"reason\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e933c984-8d5c-4153-a205-d737f35ed1a3",
+          "name": "Tesla Toggle Sentry Mode",
+          "request": {
+            "name": "Tesla Toggle Sentry Mode",
+            "description": {
+              "content": "Toggle Sentry Mode",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "vehicles",
+                ":vehicle_id",
+                "command",
+                "set_sentry_mode"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vehicle_id",
+                  "description": "(Required) The id of the Vehicle."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"on\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "058f3901-e272-4e1a-a549-e9476cb7c02d",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "vehicles",
+                    ":vehicle_id",
+                    "command",
+                    "set_sentry_mode"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vehicle_id",
+                      "description": "(Required) The id of the Vehicle."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"on\": true\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"result\": true,\n    \"reason\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cdaacf6f-51de-4d4c-a1ea-07747dec5757",
+          "name": "Tesla Set Max Defrost",
+          "request": {
+            "name": "Tesla Set Max Defrost",
+            "description": {
+              "content": "Set Max Defrost",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "vehicles",
+                ":vehicle_id",
+                "command",
+                "set_preconditioning_max"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vehicle_id",
+                  "description": "(Required) The id of the Vehicle."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"on\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b0ebfc95-6fba-490f-b983-c44e6f1a9b0d",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "vehicles",
+                    ":vehicle_id",
+                    "command",
+                    "set_preconditioning_max"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vehicle_id",
+                      "description": "(Required) The id of the Vehicle."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"on\": true\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"result\": true,\n    \"reason\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2ae901f9-c6d5-4af0-a4db-4e12fbc93b27",
+          "name": "Tesla Window Control",
+          "request": {
+            "name": "Tesla Window Control",
+            "description": {
+              "content": "Window Control",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "vehicles",
+                ":vehicle_id",
+                "command",
+                "window_control"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vehicle_id",
+                  "description": "(Required) The id of the Vehicle."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"lat\": \"<double>\",\n  \"lon\": \"<double>\",\n  \"command\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2e7805af-0cc7-4532-98e6-b5035311440e",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "vehicles",
+                    ":vehicle_id",
+                    "command",
+                    "window_control"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vehicle_id",
+                      "description": "(Required) The id of the Vehicle."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lat\": 123.456,\n  \"lng\": -123.456,\n  \"command\": \"vent\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"result\": true,\n    \"reason\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3f0cbaa5-4c59-4c13-957e-0bb472db8af4",
+          "name": "Tesla Trigger Homelink",
+          "request": {
+            "name": "Tesla Trigger Homelink",
+            "description": {
+              "content": "Trigger Homelink",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "vehicles",
+                ":vehicle_id",
+                "command",
+                "trigger_homelink"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vehicle_id",
+                  "description": "(Required) The id of the Vehicle."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"lat\": \"<double>\",\n  \"lon\": \"<double>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "fd150859-8e23-47aa-96ad-693f9299c23c",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "vehicles",
+                    ":vehicle_id",
+                    "command",
+                    "trigger_homelink"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vehicle_id",
+                      "description": "(Required) The id of the Vehicle."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lat\": 123.456,\n  \"lng\": -123.456\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"result\": true,\n    \"reason\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "be153c25-24cd-42ae-9129-88909a08f90d",
+          "name": "Tesla Set Vehicle Name",
+          "request": {
+            "name": "Tesla Set Vehicle Name",
+            "description": {
+              "content": "Set Vehicle Name",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "vehicles",
+                ":vehicle_id",
+                "command",
+                "set_vehicle_name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vehicle_id",
+                  "description": "(Required) The id of the Vehicle."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"vehicle_name\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d4d01e64-66d6-4418-9e8a-7bb50b3b839f",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "vehicles",
+                    ":vehicle_id",
+                    "command",
+                    "set_vehicle_name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vehicle_id",
+                      "description": "(Required) The id of the Vehicle."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vehicle_name\": \"My Cool Car\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"result\": true,\n    \"reason\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d0d8c94f-f744-47c4-924d-fd5c7a04ee7f",
+          "name": "Tesla Remote Boombox",
+          "request": {
+            "name": "Tesla Remote Boombox",
+            "description": {
+              "content": "Remote Boombox",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "vehicles",
+                ":vehicle_id",
+                "command",
+                "remote_boombox"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vehicle_id",
+                  "description": "(Required) The id of the Vehicle."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2a500ee0-3196-4153-bd68-7f0e69e411ce",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "vehicles",
+                    ":vehicle_id",
+                    "command",
+                    "remote_boombox"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vehicle_id",
+                      "description": "(Required) The id of the Vehicle."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"result\": true,\n    \"reason\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://owner-api.teslamotors.com/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "e9568702-4605-49cd-879e-6e72ea2bdbe8",
+    "name": "Tesla Authentication Vehicle Commands API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for controlling Tesla vehicles",
+      "type": "text/plain"
+    }
+  }
+}

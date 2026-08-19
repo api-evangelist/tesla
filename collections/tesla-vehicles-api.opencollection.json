@@ -1,0 +1,224 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Tesla Authentication Vehicles API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Vehicles",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Tesla List all Vehicles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles"
+          },
+          "docs": "Retrieve a list of your owned vehicles (includes vehicles not yet shipped!)"
+        },
+        {
+          "info": {
+            "name": "Tesla Retrieve a vehicle",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ]
+          },
+          "docs": "Retrieve a specific vehicle"
+        },
+        {
+          "info": {
+            "name": "Tesla Mobile Access",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/mobile_enabled",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ]
+          },
+          "docs": "Determines if mobile access to the vehicle is enabled."
+        },
+        {
+          "info": {
+            "name": "Tesla Charge State",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/data_request/charge_state",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ]
+          },
+          "docs": "Returns the state of charge in the battery."
+        },
+        {
+          "info": {
+            "name": "Tesla Climate Settings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/data_request/climate_state",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ]
+          },
+          "docs": "Returns the current temperature and climate control state."
+        },
+        {
+          "info": {
+            "name": "Tesla Driving and Position",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/data_request/drive_state",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ]
+          },
+          "docs": "Returns the driving and position state of the vehicle."
+        },
+        {
+          "info": {
+            "name": "Tesla GUI Settings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/data_request/gui_settings",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ]
+          },
+          "docs": "Returns various information about the GUI settings of the car, such as unit format and range display."
+        },
+        {
+          "info": {
+            "name": "Tesla Vehicle State",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/data_request/vehicle_state",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ]
+          },
+          "docs": "Returns the vehicle's physical state, such as which doors are open."
+        },
+        {
+          "info": {
+            "name": "Tesla Vehicle Config",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/data_request/vehicle_config",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ]
+          },
+          "docs": "Returns the vehicle's configuration"
+        },
+        {
+          "info": {
+            "name": "Tesla Vehicle Data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/vehicle_data",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              },
+              {
+                "name": "endpoints",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns all vehicle ∂ata, potentially cached"
+        },
+        {
+          "info": {
+            "name": "Tesla Get Nearby Chargers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/nearby_charging_sites",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ]
+          },
+          "docs": "Get a list of nearby charging sites"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

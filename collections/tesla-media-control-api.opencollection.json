@@ -1,0 +1,174 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Tesla Authentication Media Control API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Media Control",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Tesla Pause/Play Media",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/command/media_toggle_playback",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ]
+          },
+          "docs": "Pause/Play Media"
+        },
+        {
+          "info": {
+            "name": "Tesla Next Track",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/command/media_next_track",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ]
+          },
+          "docs": "Next Track"
+        },
+        {
+          "info": {
+            "name": "Tesla Previous Track",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/command/media_prev_track",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ]
+          },
+          "docs": "Previous Track"
+        },
+        {
+          "info": {
+            "name": "Tesla Next Favorite",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/command/media_next_fav",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ]
+          },
+          "docs": "Next Favorite"
+        },
+        {
+          "info": {
+            "name": "Tesla Previous Favorite",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/command/media_prev_fav",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ]
+          },
+          "docs": "Previous Favorite"
+        },
+        {
+          "info": {
+            "name": "Tesla Volume Up",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/command/media_volume_up",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ]
+          },
+          "docs": "Volume Up"
+        },
+        {
+          "info": {
+            "name": "Tesla Volume Down",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/command/media_volume_down",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ]
+          },
+          "docs": "Volume Down"
+        },
+        {
+          "info": {
+            "name": "Tesla Adjust Volume",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://owner-api.teslamotors.com/api/1/vehicles/:vehicle_id/command/adjust_volume",
+            "params": [
+              {
+                "name": "vehicle_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the Vehicle."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Adjust Volume"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
