@@ -1,0 +1,35 @@
+slug: tesla
+provider: Tesla
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Automotive & Mobility
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 2
+edges:
+- tag: Vehicle Commands
+  spec_file: tesla-vehicle-commands-api-openapi.yml
+  capability_id: BC-3460
+  capability_id_l1: BC-3460
+  capability_name: Vehicle Connected Services Management
+  confidence: 0.8
+  evidence: POST /api/1/vehicles/{vehicle_id}/command/set_scheduled_charging  'Tesla Set Scheduled Charging'
+  reason: Fleet API remote command execution against connected vehicles (charging, climate, valet, windows)
+    — connected vehicle services operations at L1.
+- tag: Vehicles
+  spec_file: tesla-vehicles-api-openapi.yml
+  capability_id: BC-3460.10
+  capability_id_l1: BC-3460
+  capability_name: Vehicle Connectivity Platform Operations
+  confidence: 0.7
+  evidence: GET /api/1/vehicles/{vehicle_id}/vehicle_data  GetVehicleData; GET .../data_request/drive_state
+    'Tesla Driving and Position'
+  reason: Read access to vehicle telemetry and state from the cloud for partner fleet applications; closest
+    fit is vehicle-to-cloud telemetry within connected services, with some ambiguity versus the vehicle
+    data platform L2.
