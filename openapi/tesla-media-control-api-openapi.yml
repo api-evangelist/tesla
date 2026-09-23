@@ -1,6 +1,6 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Tesla Authentication Media Control API
+  title: Tesla Media Control API
   description: API for controlling Tesla vehicles
   version: '1.0'
 servers:

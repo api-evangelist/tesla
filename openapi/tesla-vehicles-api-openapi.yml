@@ -1,6 +1,6 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Tesla Authentication Vehicles API
+  title: Tesla Vehicles API
   description: API for controlling Tesla vehicles
   version: '1.0'
 servers:
@@ -249,67 +249,117 @@ paths:
                 $ref: '#/components/schemas/NearbyChargerResponse'
 components:
   schemas:
-    GuiState:
+    ChargeState:
       type: object
       properties:
-        gui_distance_units:
+        charging_state:
           type: string
-        gui_temperature_units:
+        fast_charger_type:
           type: string
-        gui_charge_rate_units:
+        fast_charger_brand:
           type: string
-        gui_24_hour_time:
+        charge_limit_soc:
+          type: integer
+        charge_limit_soc_std:
+          type: integer
+        charge_limit_soc_min:
+          type: integer
+        charge_limit_soc_max:
+          type: integer
+        charge_to_max_range:
           type: boolean
-        gui_range_display:
+        max_range_charge_counter:
+          type: integer
+        fast_charger_present:
+          type: boolean
+        battery_range:
+          type: number
+          format: double
+        est_battery_range:
+          type: number
+          format: double
+        ideal_battery_range:
+          type: number
+          format: double
+        battery_level:
+          type: integer
+        usable_battery_level:
+          type: integer
+        charge_energy_added:
+          type: number
+          format: double
+        charge_miles_added_rated:
+          type: number
+          format: double
+        charge_miles_added_ideal:
+          type: number
+          format: double
+        charger_voltage:
+          type: integer
+        charger_pilot_current:
+          type: integer
+        charger_actual_current:
+          type: integer
+        charger_power:
+          type: integer
+        time_to_full_charge:
+          type: number
+          format: double
+        trip_charging:
+          type: boolean
+        charge_rate:
+          type: number
+          format: double
+        charge_port_door_open:
+          type: boolean
+        conn_charge_cable:
           type: string
-        gui_tirepressure_units:
+        scheduled_charging_start_time:
           type: string
+        scheduled_charging_pending:
+          type: boolean
+        user_charge_enable_request:
+          type: boolean
+        charge_enable_request:
+          type: boolean
+        charger_phases:
+          type: integer
+        charge_port_latch:
+          type: string
+        charge_current_request:
+          type: integer
+        charge_current_request_max:
+          type: integer
+        managed_charging_active:
+          type: boolean
+        managed_charging_user_canceled:
+          type: boolean
+        managed_charging_start_time:
+          type: number
+          format: long
+        battery_heater_on:
+          type: boolean
+        not_enough_power_to_heat:
+          type: boolean
         timestamp:
           type: number
-    GetVehiclesResponse:
-      title: List all Vehicles response
-      required:
-      - count
-      - response
+    NearbyChargerResponse:
+      title: NearbyChargerResponse
       type: object
       properties:
         response:
-          type: array
-          items:
-            $ref: '#/components/schemas/Vehicle'
-        count:
-          type: integer
-          description: ''
-          format: int32
-          example: 1
-      example:
-        response:
-        - id: 321
-          option_codes: MS01,RENA,TM00,DRLH,PF00,BT85,PBCW,RFPO,WT19,IBMB,IDPB,TR00,SU01,SC01,TP01,AU01,CH00,HP00,PA00,PS00,AD02,X020,X025,X001,X003,X007,X011,X013
-          user_id: 123
-          vehicle_id: 1234567890
-          vin: 5YJSA1CN5CFP01657
-          tokens:
-          - x
-          - x
-          state: online
-        count: 1
-    VehicleStateResponse:
-      title: Vehicle State response
-      required:
-      - response
-      type: object
-      properties:
-        response:
-          $ref: '#/components/schemas/VehicleState'
-    ClimateSettingsResponse:
-      title: Climate Settings response
-      required:
-      - response
-      type: object
-      properties:
-        response:
-          $ref: '#/components/schemas/ClimateState'
+          type: object
+          properties:
+            congestion_sync_time_utc_secs:
+              type: number
+            destination_charging:
+              type: array
+              items:
+                $ref: '#/components/schemas/DestinationCharger'
+            superchargers:
+              type: array
+              items:
+                $ref: '#/components/schemas/Supercharger'
     DestinationCharger:
       title: DestinationCharger
       type: object
@@ -331,6 +381,35 @@ components:
         distance_miles:
           type: number
           format: double
+    DriveStateResponse:
+      title: Driving and Position response
+      required:
+      - response
+      type: object
+      properties:
+        response:
+          $ref: '#/components/schemas/DriveState'
+    Vehicle:
+      type: object
+      properties:
+        color:
+          type: string
+        display_name:
+          type: string
+        id:
+          type: string
+        option_codes:
+          type: string
+        vehicle_id:
+          type: string
+        vin:
+          type: string
+        tokens:
+          type: array
+          items:
+            type: string
+        state:
+          type: string
     VehicleConfig:
       type: object
       properties:
@@ -378,11 +457,47 @@ components:
           type: string
         wheel_type:
           type: string
-    VehicleResponse:
+    ClimateSettingsResponse:
+      title: Climate Settings response
+      required:
+      - response
       type: object
       properties:
         response:
-          $ref: '#/components/schemas/Vehicle'
+          $ref: '#/components/schemas/ClimateState'
+    VehicleStateResponse:
+      title: Vehicle State response
+      required:
+      - response
+      type: object
+      properties:
+        response:
+          $ref: '#/components/schemas/VehicleState'
+    GuiState:
+      type: object
+      properties:
+        gui_distance_units:
+          type: string
+        gui_temperature_units:
+          type: string
+        gui_charge_rate_units:
+          type: string
+        gui_24_hour_time:
+          type: boolean
+        gui_range_display:
+          type: string
+        gui_tirepressure_units:
+          type: string
+        timestamp:
+          type: number
+    GuistateResponse:
+      title: GUI Settings response
+      required:
+      - response
+      type: object
+      properties:
+        response:
+          $ref: '#/components/schemas/GuiState'
     VehicleDataResponse:
       title: Vehicle Data Response
       type: object
@@ -538,18 +653,6 @@ components:
           type: boolean
         summon_standby_mode_enabled:
           type: boolean
-    MobileAccessResponse:
-      title: Mobile Access response
-      required:
-      - response
-      type: object
-      properties:
-        response:
-          type: boolean
-          description: ''
-          example: true
-      example:
-        response: true
     VehicleConfigResponse:
       title: Vehicle Config response
       required:
@@ -558,14 +661,6 @@ components:
       properties:
         response:
           $ref: '#/components/schemas/VehicleConfig'
-    ChargeStateResponse:
-      title: Charge State response
-      required:
-      - response
-      type: object
-      properties:
-        response:
-          $ref: '#/components/schemas/ChargeState'
     DriveState:
       type: object
       properties:
@@ -599,116 +694,74 @@ components:
           type: string
         timestamp:
           type: number
-    GuistateResponse:
-      title: GUI Settings response
+    GetVehiclesResponse:
+      title: List all Vehicles response
+      required:
+      - count
+      - response
+      type: object
+      properties:
+        response:
+          type: array
+          items:
+            $ref: '#/components/schemas/Vehicle'
+        count:
+          type: integer
+          description: ''
+          format: int32
+          example: 1
+      example:
+        response:
+        - id: 321
+          option_codes: MS01,RENA,TM00,DRLH,PF00,BT85,PBCW,RFPO,WT19,IBMB,IDPB,TR00,SU01,SC01,TP01,AU01,CH00,HP00,PA00,PS00,AD02,X020,X025,X001,X003,X007,X011,X013
+          user_id: 123
+          vehicle_id: 1234567890
+          vin: 5YJSA1CN5CFP01657
+          tokens:
+          - x
+          - x
+          state: online
+        count: 1
+    ChargeStateResponse:
+      title: Charge State response
       required:
       - response
       type: object
       properties:
         response:
-          $ref: '#/components/schemas/GuiState'
-    DriveStateResponse:
-      title: Driving and Position response
-      required:
-      - response
+          $ref: '#/components/schemas/ChargeState'
+    Supercharger:
+      title: Supercharger
+      type: object
+      properties:
+        location:
+          type: object
+          properties:
+            lat:
+              type: number
+              format: double
+            long:
+              type: number
+              format: double
+        name:
+          type: string
+        type:
+          type: string
+          default: supercharger
+        distance_miles:
+          type: number
+          format: double
+        available_stalls:
+          type: number
+        total_stalls:
+          type: number
+        site_closed:
+          type: boolean
+    VehicleResponse:
       type: object
       properties:
         response:
-          $ref: '#/components/schemas/DriveState'
-    ChargeState:
-      type: object
-      properties:
-        charging_state:
-          type: string
-        fast_charger_type:
-          type: string
-        fast_charger_brand:
-          type: string
-        charge_limit_soc:
-          type: integer
-        charge_limit_soc_std:
-          type: integer
-        charge_limit_soc_min:
-          type: integer
-        charge_limit_soc_max:
-          type: integer
-        charge_to_max_range:
-          type: boolean
-        max_range_charge_counter:
-          type: integer
-        fast_charger_present:
-          type: boolean
-        battery_range:
-          type: number
-          format: double
-        est_battery_range:
-          type: number
-          format: double
-        ideal_battery_range:
-          type: number
-          format: double
-        battery_level:
-          type: integer
-        usable_battery_level:
-          type: integer
-        charge_energy_added:
-          type: number
-          format: double
-        charge_miles_added_rated:
-          type: number
-          format: double
-        charge_miles_added_ideal:
-          type: number
-          format: double
-        charger_voltage:
-          type: integer
-        charger_pilot_current:
-          type: integer
-        charger_actual_current:
-          type: integer
-        charger_power:
-          type: integer
-        time_to_full_charge:
-          type: number
-          format: double
-        trip_charging:
-          type: boolean
-        charge_rate:
-          type: number
-          format: double
-        charge_port_door_open:
-          type: boolean
-        conn_charge_cable:
-          type: string
-        scheduled_charging_start_time:
-          type: string
-        scheduled_charging_pending:
-          type: boolean
-        user_charge_enable_request:
-          type: boolean
-        charge_enable_request:
-          type: boolean
-        charger_phases:
-          type: integer
-        charge_port_latch:
-          type: string
-        charge_current_request:
-          type: integer
-        charge_current_request_max:
-          type: integer
-        managed_charging_active:
-          type: boolean
-        managed_charging_user_canceled:
-          type: boolean
-        managed_charging_start_time:
-          type: number
-          format: long
-        battery_heater_on:
-          type: boolean
-        not_enough_power_to_heat:
-          type: boolean
-        timestamp:
-          type: number
+          $ref: '#/components/schemas/Vehicle'
     ClimateState:
       type: object
       properties:
@@ -774,68 +827,15 @@ components:
           type: integer
         timestamp:
           type: number
-    Vehicle:
-      type: object
-      properties:
-        color:
-          type: string
-        display_name:
-          type: string
-        id:
-          type: string
-        option_codes:
-          type: string
-        vehicle_id:
-          type: string
-        vin:
-          type: string
-        tokens:
-          type: array
-          items:
-            type: string
-        state:
-          type: string
-    NearbyChargerResponse:
-      title: NearbyChargerResponse
+    MobileAccessResponse:
+      title: Mobile Access response
+      required:
+      - response
       type: object
       properties:
         response:
-          type: object
-          properties:
-            congestion_sync_time_utc_secs:
-              type: number
-            destination_charging:
-              type: array
-              items:
-                $ref: '#/components/schemas/DestinationCharger'
-            superchargers:
-              type: array
-              items:
-                $ref: '#/components/schemas/Supercharger'
-    Supercharger:
-      title: Supercharger
-      type: object
-      properties:
-        location:
-          type: object
-          properties:
-            lat:
-              type: number
-              format: double
-            long:
-              type: number
-              format: double
-        name:
-          type: string
-        type:
-          type: string
-          default: supercharger
-        distance_miles:
-          type: number
-          format: double
-        available_stalls:
-          type: number
-        total_stalls:
-          type: number
-        site_closed:
           type: boolean
+          description: ''
+          example: true
+      example:
+        response: true

@@ -1,10 +1,7 @@
 {
   "provider": "tesla",
   "sources": [
-    "tesla-authentication-api-openapi.yml",
-    "tesla-media-control-api-openapi.yml",
-    "tesla-vehicle-commands-api-openapi.yml",
-    "tesla-vehicles-api-openapi.yml"
+    "_original/tesla-openapi-original.yml"
   ],
   "outputs": [
     "tesla-authentication-api-openapi.yml",
@@ -15,6 +12,15 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "tesla-openapi-original.yml: upgraded openapi 3.0.1 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "tesla-authentication-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "tesla-media-control-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "tesla-vehicle-commands-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "tesla-vehicles-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
