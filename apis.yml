@@ -68,8 +68,6 @@ apis:
     url: https://developer.tesla.com/docs/fleet-api/authentication/overview
   - type: Billing
     url: https://developer.tesla.com/docs/fleet-api/billing-and-limits
-  - type: GraphQL
-    url: graphql/tesla-graphql.md
   - type: Documentation
     url: https://tesla-api.timdorr.com/
   - type: Repository
@@ -98,8 +96,6 @@ apis:
     url: https://developer.tesla.com/docs/fleet-api/authentication/overview
   - type: Billing
     url: https://developer.tesla.com/docs/fleet-api/billing-and-limits
-  - type: GraphQL
-    url: graphql/tesla-graphql.md
   - type: Documentation
     url: https://tesla-api.timdorr.com/
   - type: Repository
@@ -128,8 +124,6 @@ apis:
     url: https://developer.tesla.com/docs/fleet-api/authentication/overview
   - type: Billing
     url: https://developer.tesla.com/docs/fleet-api/billing-and-limits
-  - type: GraphQL
-    url: graphql/tesla-graphql.md
   - type: Documentation
     url: https://tesla-api.timdorr.com/
   - type: Repository
@@ -158,8 +152,6 @@ apis:
     url: https://developer.tesla.com/docs/fleet-api/authentication/overview
   - type: Billing
     url: https://developer.tesla.com/docs/fleet-api/billing-and-limits
-  - type: GraphQL
-    url: graphql/tesla-graphql.md
   - type: Documentation
     url: https://tesla-api.timdorr.com/
   - type: Repository
