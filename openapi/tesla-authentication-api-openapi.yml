@@ -37,34 +37,6 @@ paths:
       x-codegen-request-body-name: body
 components:
   schemas:
-    CreateAccessTokenRequest:
-      title: Get an Access Token request
-      type: object
-      properties:
-        grant_type:
-          type: string
-          description: The type of oAuth grant. "password" or "refresh_token"
-          example: password
-        client_id:
-          type: string
-          description: The oAuth client ID
-          example: abc
-        client_secret:
-          type: string
-          description: The oAuth client secret
-          example: '123'
-        email:
-          type: string
-          description: The email for my.teslamotors.com. Only used with "password" grant type.
-          example: elon@teslamotors.com
-        password:
-          type: string
-          description: The password for my.teslamotors.com. Only used with "password" grant type.
-          example: edisonsux
-        refresh_token:
-          type: string
-          description: A refresh token from a previous CreateAccessTokenResponse
-          example: 0f0f0f0f0f0ff0f0f0f0f0f0f0f0f0f0f0f0f0f0f0ff0f0f0f0f0f0f0f0f0f
     CreateAccessTokenResponse:
       title: Get an Access Token response
       required:
@@ -103,3 +75,31 @@ components:
         expires_in: 7776000
         created_at: 1457385291
         refresh_token: cba321
+    CreateAccessTokenRequest:
+      title: Get an Access Token request
+      type: object
+      properties:
+        grant_type:
+          type: string
+          description: The type of oAuth grant. "password" or "refresh_token"
+          example: password
+        client_id:
+          type: string
+          description: The oAuth client ID
+          example: abc
+        client_secret:
+          type: string
+          description: The oAuth client secret
+          example: '123'
+        email:
+          type: string
+          description: The email for my.teslamotors.com. Only used with "password" grant type.
+          example: elon@teslamotors.com
+        password:
+          type: string
+          description: The password for my.teslamotors.com. Only used with "password" grant type.
+          example: edisonsux
+        refresh_token:
+          type: string
+          description: A refresh token from a previous CreateAccessTokenResponse
+          example: 0f0f0f0f0f0ff0f0f0f0f0f0f0f0f0f0f0f0f0f0f0ff0f0f0f0f0f0f0f0f0f
