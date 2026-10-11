@@ -1,0 +1,11 @@
+[
+  {
+    "repo": "tesla",
+    "captured_at": "2026-10-11T193324",
+    "source_url": "https://developer.tesla.com/",
+    "source_type": "Portal",
+    "file": "tesla-2026-10-11T193324.png",
+    "bytes": 121386,
+    "capture": "playwright-local"
+  }
+]
