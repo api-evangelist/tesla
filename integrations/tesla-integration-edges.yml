@@ -1,0 +1,26 @@
+generated: '2026-10-13'
+method: searched
+checked:
+- https://app.usecanopy.com/api/v1.0.0/carriers
+marketplace_apps: []
+edges:
+- partner_name: smartcar
+  partner: smartcar
+  partner_match: aggregator
+  channel: partner-built
+  direction: partner-built
+  type: contract
+  relationship: system-coverage
+  evidence: https://compatibility.api.smartcar.com/v3/compatible-vehicles
+  detected_by: sweep-automotive.py
+  detected: '2026-10-13'
+- partner_name: high-mobility
+  partner: high-mobility
+  partner_match: aggregator
+  channel: partner-built
+  direction: partner-built
+  type: claimed
+  relationship: system-coverage
+  evidence: https://www.high-mobility.com/car-api/tesla-data-api
+  detected_by: sweep-automotive.py
+  detected: '2026-10-13'
