@@ -66,3 +66,93 @@
       P856 not contradicting (Kin 2026-10-20 decision 2)
   status: not-a-workflow
   arazzo: null
+- slug: tesla-open-charge-alliance-ocpp-certification
+  label: Open Charge Alliance (OCPP certification)
+  partner_name: Open Charge Alliance (OCPP certification)
+  category: OCPP certified charging products
+  type: register
+  channel: standard-directory
+  evidence: https://openchargealliance.org/participants/tesla/
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: Open Charge Alliance certified products (openchargealliance.org/certified-companies/)
+    standard: OCPP (Open Charge Point Protocol)
+    spec_file: null
+    role: ocpp-certified-vendor
+    registered_name: Tesla
+    register_id: OCA.0016.0900.CS
+    register_country: USA
+    matched_domain: tesla.com
+    matched_by: domain+name-among-holders
+    certified_products:
+    - product: OCPP certified Charging Station
+      product_type: Charging Station
+      ocpp_versions:
+      - OCPP 1.6
+      - OCPP 2.0.1
+      lapsed: false
+    certificates_active: 5
+    signal_note: certified_products = one entry per OCPP product type, never per certificate, model or version;
+      lapsed only when every certificate of the product type is on the OCA withdrawn list (the register does not
+      lapse a certificate when its OCPP version is superseded). Certificate counts are context, never counted
+    detected_by: sweep-ev-charging.py
+    detected: '2026-10-20'
+    identity: wikidata Q478214 'Tesla' P856 https://www.tesla.com/
+    identity_source: wikidata P856 (labelled provenance step; Kin 2026-10-15 decision 1)
+  status: not-a-workflow
+  arazzo: null
+- slug: tesla-evroaming-foundation-ocpi
+  label: EVRoaming Foundation (OCPI)
+  partner_name: EVRoaming Foundation (OCPI)
+  category: OCPI roaming protocol steward membership
+  type: register
+  channel: standard-directory
+  evidence: https://evroaming.org/members/
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: EVRoaming Foundation members (evroaming.org/members/, OCPI steward)
+    standard: OCPI
+    spec_file: null
+    role: evroaming-member
+    registered_name: Tesla Motors Netherlands B.V.
+    register_country: Netherlands
+    partner_tier: Full
+    matched_domain: tesla.com
+    matched_by: domain+name-among-holders
+    signal_note: 'participation only: membership of the OCPI steward; the member table''s OCPI-certified flag is
+      not set for this member'
+    detected_by: sweep-ev-charging.py
+    detected: '2026-10-20'
+    identity: wikidata Q478214 'Tesla' P856 https://www.tesla.com/
+    identity_source: wikidata P856 (labelled provenance step; Kin 2026-10-15 decision 1)
+  status: not-a-workflow
+  arazzo: null
+- slug: tesla-charin-e-v-charging-interface-initiative
+  label: CharIN e.V. (Charging Interface Initiative)
+  partner_name: CharIN e.V. (Charging Interface Initiative)
+  category: charging-interface standards association membership
+  type: register
+  channel: standard-directory
+  evidence: https://www.charin.global/community/tesla
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: CharIN e.V. members (charin.global/community, membership:core + membership:regular)
+    standard: CCS / MCS / ISO 15118 (Plug & Charge)
+    spec_file: null
+    role: charin-member
+    registered_name: Tesla
+    register_id: https://www.charin.global/community/tesla
+    partner_tier: core
+    member_since: null
+    matched_domain: tesla.com
+    matched_by: domain+name-among-holders
+    signal_note: 'participation only: association membership; tier is context, never counted'
+    detected_by: sweep-ev-charging.py
+    detected: '2026-10-20'
+    identity: wikidata Q478214 'Tesla' P856 https://www.tesla.com/
+    identity_source: wikidata P856 (member page gives no website; labelled provenance step)
+  status: not-a-workflow
+  arazzo: null
