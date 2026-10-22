@@ -199,3 +199,66 @@
     identity_source: wikidata P856 (labelled provenance step; Kin 2026-10-15 decision 1)
   status: not-a-workflow
   arazzo: null
+- slug: tesla-lf-energy-membership-landscape
+  label: LF Energy (membership / landscape)
+  partner: lf-energy
+  partner_name: LF Energy (membership / landscape)
+  category: LF Energy landscape listing
+  type: register
+  channel: standard-directory
+  evidence: https://github.com/lf-energy/lfenergy-landscape/blob/1364cff4a6379fe8e87568eb5134fd6e8b4ded8e/landscape.yml
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: LF Energy Landscape (github.com/lf-energy/lfenergy-landscape landscape.yml @1364cff4a6)
+    spec_file: null
+    standard: LF Energy
+    role: landscape-listed
+    registered_name: Autobidder
+    registered_names:
+    - Autobidder
+    website: https://www.tesla.com/en_CA/support/energy/tesla-software/autobidder
+    matched_domain: tesla.com
+    matched_by: domain+name-among-holders
+    landscape_categories:
+    - Customer and Market / Market Platform Gateway
+    landscape_entries: 1
+    signal_note: 'participation only: LF Energy membership / a landscape listing is standard-participant evidence,
+      not depth. Tier, entries and categories are CONTEXT, never counted'
+    detected_by: sweep-lf-energy-projects.py
+    detected: '2026-10-22'
+  status: not-a-workflow
+  arazzo: null
+- slug: tesla-lf-energy-projects-contributor
+  label: LF Energy projects (contributor)
+  partner: lf-energy
+  partner_name: LF Energy projects (contributor)
+  category: LF Energy project contribution
+  type: register
+  channel: standard-directory
+  evidence: https://lfenergy.org/projects/everest/
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: LF Energy project pages (lfenergy.org/projects/)
+    spec_file: null
+    standard: LF Energy
+    role: lfe-project-contributor
+    registered_name: Tesla, Inc.
+    registered_names:
+    - Tesla, Inc.
+    matched_domain: tesla.com
+    matched_by: domain+name-among-holders
+    lfe_projects:
+    - project: EVerest – LF Energy
+      stage: null
+      evidence_url: https://lfenergy.org/projects/everest/
+      as:
+      - contributor-list
+    signal_note: 'participation only: named by an LF Energy project page as initiator / TSC / contributing organisation;
+      projects and stages are CONTEXT, never counted'
+    detected_by: sweep-lf-energy-projects.py
+    detected: '2026-10-22'
+    identity_source: wikidata P856 (labelled provenance step; Kin 2026-10-15 decision 1)
+  status: not-a-workflow
+  arazzo: null
