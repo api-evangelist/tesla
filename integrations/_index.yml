@@ -156,3 +156,46 @@
     identity_source: wikidata P856 (member page gives no website; labelled provenance step)
   status: not-a-workflow
   arazzo: null
+- slug: tesla-us-epa-energy-star
+  label: US EPA ENERGY STAR
+  partner_name: US EPA ENERGY STAR
+  category: ENERGY STAR product certification
+  type: register
+  channel: standard-directory
+  evidence: https://data.energystar.gov/d/8wj2-sec8
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: ENERGY STAR Model Index, all currently certified models (data.energystar.gov/resource/8wj2-sec8)
+    standard: ENERGY STAR (US EPA product specifications)
+    spec_file: null
+    role: energy-star-partner
+    registered_name: Tesla, Inc.
+    register_id: https://data.energystar.gov/d/8wj2-sec8
+    matched_domain: tesla.com
+    matched_by: domain+name-among-holders
+    certified_products:
+    - product: Electric Vehicle Supply Equipment
+      product_type: Electric Vehicle Supply Equipment
+      lapsed: false
+      brands:
+      - Tesla
+      - Universal Wall Connector
+      first_certified: '2023-09-18'
+      connected: true
+      connected_protocols:
+      - Cellular
+      - Wi-Fi or Gigabit Ethernet
+    connected_product_types:
+    - Electric Vehicle Supply Equipment
+    signal_note: 'certified_products = ONE entry per ENERGY STAR product category with a currently certified model
+      (the Model Index lists current certifications only, so lapsed is False; delisted models drop out); connected:
+      true where the category''s dataset flags connected / network capability for this partner''s models (Smart
+      Thermostats and Connected lighting are connected by definition). Brands are context; model counts are never
+      counted.'
+    detected_by: sweep-energy-star-certified-products.py
+    detected: '2026-10-22'
+    identity: wikidata Q478214 'Tesla' P856 https://www.tesla.com/
+    identity_source: wikidata P856 (labelled provenance step; Kin 2026-10-15 decision 1)
+  status: not-a-workflow
+  arazzo: null
