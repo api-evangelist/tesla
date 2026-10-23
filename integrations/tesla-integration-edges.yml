@@ -14,6 +14,9 @@ checked:
 - https://landscape.lfenergy.org
 - https://lfenergy.org/projects/
 - https://raw.githubusercontent.com/lf-energy/lfenergy-landscape/1364cff4a6379fe8e87568eb5134fd6e8b4ded8e/landscape.yml
+- https://github.com/arras-energy/tsc/blob/HEAD/GOVERNANCE.md
+- https://github.com/opendsm/opendsm/blob/HEAD/MAINTAINERS.md
+- https://landscape.lfenergy.org/data/full.json
 marketplace_apps: []
 edges:
 - partner_name: canopy
@@ -270,6 +273,35 @@ edges:
     detected: '2026-10-22'
     identity_source: wikidata P856 (labelled provenance step; Kin 2026-10-15 decision 1)
   detected_by: sweep-lf-energy-projects.py
+  first_seen: '2026-10-22'
+- partner_name: LF Energy landscape (project maintainers)
+  partner: lf-energy
+  partner_match: register
+  type: register
+  channel: standard-directory
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://landscape.lfenergy.org/?item=customer-and-market--market-platform-gateway--autobidder
+  category: open-source energy project maintenance
+  contract_reference:
+    register: LF Energy landscape project attributions (landscape.lfenergy.org/data/full.json crunchbase_url + LF
+      Energy project repo MAINTAINERS / GOVERNANCE files)
+    standard: LF Energy
+    spec_file: null
+    role: landscape-project-maintainer
+    registered_name: Tesla
+    matched_domain: tesla.com
+    matched_by: domain+name-among-holders
+    lf_energy_projects: []
+    listed_projects:
+    - Autobidder
+    listed_projects_total: 1
+    signal_note: 'participation only (''maintains''): the organisation the landscape or a project''s governance
+      file names behind an open-source energy / sustainability project. Projects are CONTEXT, never counted (breadth
+      is not credit)'
+    detected_by: sweep-lf-energy-landscape.py
+    detected: '2026-10-22'
+  detected_by: sweep-lf-energy-landscape.py
   first_seen: '2026-10-22'
 source:
 - https://app.usecanopy.com/api/v1.0.0/carriers

@@ -262,3 +262,33 @@
     identity_source: wikidata P856 (labelled provenance step; Kin 2026-10-15 decision 1)
   status: not-a-workflow
   arazzo: null
+- slug: tesla-lf-energy-landscape-project-maintainers
+  label: LF Energy landscape (project maintainers)
+  partner: lf-energy
+  partner_name: LF Energy landscape (project maintainers)
+  category: open-source energy project maintenance
+  type: register
+  channel: standard-directory
+  evidence: https://landscape.lfenergy.org/?item=customer-and-market--market-platform-gateway--autobidder
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: LF Energy landscape project attributions (landscape.lfenergy.org/data/full.json crunchbase_url + LF
+      Energy project repo MAINTAINERS / GOVERNANCE files)
+    standard: LF Energy
+    spec_file: null
+    role: landscape-project-maintainer
+    registered_name: Tesla
+    matched_domain: tesla.com
+    matched_by: domain+name-among-holders
+    lf_energy_projects: []
+    listed_projects:
+    - Autobidder
+    listed_projects_total: 1
+    signal_note: 'participation only (''maintains''): the organisation the landscape or a project''s governance
+      file names behind an open-source energy / sustainability project. Projects are CONTEXT, never counted (breadth
+      is not credit)'
+    detected_by: sweep-lf-energy-landscape.py
+    detected: '2026-10-22'
+  status: not-a-workflow
+  arazzo: null
