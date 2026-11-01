@@ -64,56 +64,163 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Tesla, Inc. is an American electric vehicle and clean energy company. Tesla offers the Fleet API for partners to access Tesla vehicles and energy devices with owner-granted permissions, covering vehicle telemetry, remote commands, charging management, energy site management, and fleet management capabilities.
+Tesla, Inc. is an American electric vehicle and clean energy company founded in 2003. Tesla offers the Fleet API for partners to access Tesla vehicles and energy devices with owner-granted permissions, covering vehicle telemetry, remote commands, charging management, energy site management, and fleet management capabilities.
 
-**Type:** Company  
-**Developer Portal:** https://developer.tesla.com  
-**Website:** https://www.tesla.com  
-**GitHub:** https://github.com/teslamotors  
+**Areas:** Automobiles · Cars · Vehicles · Electric Vehicles · Energy · Clean Energy · IoT
 
-## APIs
+## Tesla on APIs.io
 
-### Tesla Fleet API
-The official Tesla partner API providing access to Tesla vehicles and energy devices with OAuth permissions. Supports vehicle telemetry, remote commands, charging, and energy site management.
+Everything profiled for Tesla is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/tesla/](https://apis.io/providers/tesla/)** — or go straight to one of the APIs or properties below.
 
-- **Base URL:** `https://fleet-api.prd.na.vn.cloud.tesla.com/api/1`
-- **Authentication:** OAuth2 Bearer token
-- **Documentation:** https://developer.tesla.com/docs/fleet-api
+### APIs (4)
 
-### Tesla Owner API
-Community-documented access to Tesla vehicles via the owner-api.teslamotors.com endpoint.
+- [Tesla Authentication API](https://apis.io/apis/tesla/tesla-authentication-api/) — The Authentication API from Tesla — 1 operation(s) for authentication.
+- [Tesla Media Control API](https://apis.io/apis/tesla/tesla-media-control-api/) — The Media Control API from Tesla — 8 operation(s) for media control.
+- [Tesla Vehicle Commands API](https://apis.io/apis/tesla/tesla-vehicle-commands-api/) — The Vehicle Commands API from Tesla — 45 operation(s) for vehicle commands.
+- [Tesla Vehicles API](https://apis.io/apis/tesla/tesla-vehicles-api/) — The Vehicles API from Tesla — 11 operation(s) for vehicles.
 
-- **Base URL:** `https://owner-api.teslamotors.com/api/1`
-- **Authentication:** Bearer token
-- **Documentation:** https://tesla-api.timdorr.com/
-- **OpenAPI Spec:** [openapi/tesla-openapi-original.yml](openapi/tesla-openapi-original.yml)
+### Published properties
 
-## Artifacts
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-| Type | Files |
-|------|-------|
-| OpenAPI Specs | [openapi/](openapi/) |
-| Spectral Rules | [rules/tesla-rules.yml](rules/tesla-rules.yml) |
-| Capabilities | [capabilities/](capabilities/) |
-| JSON Schema | [json-schema/](json-schema/) |
-| JSON Structure | [json-structure/](json-structure/) |
-| JSON-LD | [json-ld/tesla-context.jsonld](json-ld/tesla-context.jsonld) |
-| Examples | [examples/](examples/) |
-| Vocabulary | [vocabulary/tesla-vocabulary.yml](vocabulary/tesla-vocabulary.yml) |
+#### GraphQL (1)
 
-## Capabilities
+GraphQL schemas.
 
-### Workflow Capabilities
-- **[vehicle-monitoring.yaml](capabilities/vehicle-monitoring.yaml)** — Tesla vehicle telemetry monitoring and remote control (15 tools)
+- [Moved to /providers/tesla/](https://apis.io/graphqls/tesla/tesla-graphql/)
 
-### Shared Per-API Definitions
-- **[shared/tesla.yaml](capabilities/shared/tesla.yaml)** — Tesla Owner API: vehicle listing, telemetry, and remote commands (14 tools)
+#### Agentic access (1)
 
-## Tags
+Which operations an agent can call, which act, and which need a human in the loop.
 
-Automobiles, Cars, Vehicles, Electric Vehicles, Energy, Clean Energy, IoT, Tesla, Remote Commands, Telemetry
+- [Tesla Agentic Access](https://apis.io/agentic-access/tesla/tesla-agentic-access/)
 
-## Maintainers
+#### JSON Schema (1)
 
-**FN:** Kin Lane  
-**Email:** kin@apievangelist.com
+The data models the API reads and writes.
+
+- [Tesla Vehicle](https://apis.io/schemas/tesla/tesla-vehicle/)
+
+#### JSON Structure (1)
+
+Data models expressed in JSON Structure.
+
+- [Tesla Vehicle State Structure](https://apis.io/json-structure/tesla/tesla-vehicle-state-structure/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Tesla Context](https://apis.io/jsonld/tesla/tesla-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Tesla Vocabulary](https://apis.io/vocabularies/tesla/tesla-vocabulary/)
+
+#### Examples (1)
+
+Example requests and responses.
+
+- [Tesla List Vehicles Example](https://apis.io/examples/tesla/tesla-list-vehicles-example/)
+
+#### Collections (4)
+
+Postman and Open Collection request collections.
+
+- [Tesla Authentication API](https://apis.io/collections/tesla/open-tesla-authentication-api/)
+- [Tesla Authentication Media Control API](https://apis.io/collections/tesla/open-tesla-media-control-api/)
+- [Tesla Authentication Vehicle Commands API](https://apis.io/collections/tesla/open-tesla-vehicle-commands-api/)
+- [Tesla Authentication Vehicles API](https://apis.io/collections/tesla/open-tesla-vehicles-api/)
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Tesla — jsonschema rules](https://apis.io/rules/tesla/tesla-jsonschema-spectral-rules/)
+- [Tesla API Rules](https://apis.io/rules/tesla/tesla-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Tesla Domain Security](https://apis.io/security/tesla/tesla-domain-security/)
+- [Tesla Vulnerability Disclosure](https://apis.io/security/tesla/tesla-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Tesla Plans Pricing](https://apis.io/plans/tesla/tesla-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Tesla Rate Limits](https://apis.io/rate-limits/tesla/tesla-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Tesla Finops](https://apis.io/finops/tesla/tesla-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.tesla.com)
+
+## API Evangelist rating
+
+**Kin Score 34.2** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 76.8 |
+| Contract quality | 47.5 |
+| Contract governance | 13.6 |
+| Operational transparency | 28.9 |
+| Developer ergonomics | 42.9 |
+| Access clarity | 7.9 |
+
+**Agent readiness 22.1** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | documented (partial credit) |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | partial |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 18.9** — Energy & Utilities
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/tesla/](https://apis.io/providers/tesla/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Tesla: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/tesla/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
